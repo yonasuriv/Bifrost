@@ -1,11 +1,13 @@
-# GitHub Avtomata
+# Bifrost  Bridge
 
-![GitHub Avtomata](https://user-images.githubusercontent.com/59540565/174418252-f9cad5fc-0042-4063-952e-09ea81589150.jpg)
+![Bifrost Bridge](https://github.com/yonasuriv/bifrost/assets/59540565/a5c83a42-439f-4631-81f9-01fc8a66aaf3)
 
 ### Installation
-Simply download the repository and run it on the terminal using:
+1. ```git clone https://github.com/yonasuriv/bifrost.git```
+2. ```sh bifrost.sh```
+3. Press ```X``` to install all the dependencies
+4. Enjoy
 
-```sh ghAvtomata.sh```
 
 ### Development
 Want to contribute? Great!
