@@ -1,0 +1,36 @@
+network_scan () {
+    echo "$negative Network Scan $end"
+    echo
+    echo "  1) $command$crackmapexec Enumerate SMB hosts$dim cme smb <ip_range>$end"
+    echo "  2) $command   Search SMB Vulnerability$dim nmap -PN --script smb-vuln* -p139,445 <ip>$end"
+    echo "  3) $command   Ping Scan$dim nmap -sP -p <ip>$end"
+    echo "  4) $command   Quick Scan $dim nmap -PN -sV --top-ports 50 --open <ip>$end"
+    echo "  5) $command   Classic Scan $dim nmap -PN -sC -sV -oA <output> <ip>$end"
+    echo "  6) $command   Full Scan$dim nmap -PN -sC -sV -p- -oA <output> <ip>$end"
+    echo "  7) $command   UDP Scan$dim nmap -sU -sC -sV -oA <output> <ip>$end"
+    echo
+    echo "  9)      Exit$end"
+    echo
+    echo -n "   Choose one of the above options: "
+    network_scan_select
+    }
+
+
+network_scan_select() {
+    read selection
+    echo "$white"
+    case $selection in
+        1) cme smb "$ip_range" ; echo "$end"; menu_return ;;
+        2) nmap -PN --script smb-vuln* -p139,445 "$ip" ; echo "$end"; menu_return ;;
+        3) nmap -p- "$ip" ; echo "$end"; menu_return ;;
+        4) nmap -PN -sV --top-ports 50 --open "$ip" ; echo "$end"; menu_return ;;
+        5) read -p "Enter the Nmap Classic Scan output filename: " output_filename
+        nmap -PN -sC -sV -oA "$output_filename" "$ip" ; echo "$end"; menu_return ;;
+        6) nmap -PN -sC -sV -p- -oA "$output_filename" "$ip" ; echo "$end"; menu_return ;;
+        7) read -p "Enter the Nmap UDP Scan output filename: " output_filename
+        nmap -sU -sC -sV -oA "$output_filename" "$ip" ; echo "$end"; menu_return ;;
+        9) credits;;
+        0) legend;;
+        *) incorrect_selection_number ; menu_return ;;
+    esac
+    }
