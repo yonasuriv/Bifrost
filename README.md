@@ -23,7 +23,8 @@ After installing all the dependencies, simply run the command ```bifrost```<br>
 
 Without giving it any arguments it will automatically create a **temporary** project to work on, which will be deleted the next time Bifrost is run again.
 
-To create a new project use the ```-p``` argument to bring up the projects menu or simply ```-p <PROJECT NAME>``` to create it and use it immediately.<br>
+* Use ```bifrost -p``` to bring up the projects menu or simply 
+* Use ```bifrost -p <PROJECT NAME>``` to create it and switch to it immediately.<br>
 
 ## Software Pre-Prequisites
 To install all the dependencies, simply run:<br><br>
