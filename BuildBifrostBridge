@@ -2,9 +2,9 @@
 
 bridge='export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
-origin=~/.local/share/Bifrost
+origin='~/.local/share/Bifrost'
 location=$(pwd)
-transfer=sudo mv $location $origin
+transfer=$(mv -r $location $origin)
 
 build () {
    
@@ -15,7 +15,8 @@ build () {
     cp Bifrost.c bifrost
     chmod +x bifrost
     mkdir -p ~/.local/bin
-    sudo mv bifrost ~/.local/bin
+    mv bifrost ~/.local/bin
+    transfer
 
     # Check if the line already exists in ~/.bashrc and append it if not
     if ! grep -qF "$bridge" ~/.bashrc; then
