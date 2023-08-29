@@ -11,9 +11,11 @@ The approach of this project is to make the Penetration Testing work more effici
  
 Depending on the interactions between services and source or destination of traffic, rules are created and sorted by assignment.
 
+## Distribution
+Stable-Experimental: Bifrost Link is currently under Development.
 
 ## Installation
-```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh bifrost.sh```
+```git clone https://github.com/yonasuriv/bifrost.git```
 
 ## Software Pre-Prequisites
 To install all the dependencies, simply run:<br><br>
@@ -26,9 +28,6 @@ After installing all the dependencies, simply run the command without any argume
 ## Documentation
 Check the man page using the -h flag. <br><br>
 ```sh bifrost.sh -H```
-
-## Distribution
-Bifrost Link is currently under development.
 
 ## Contribution
 Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. <br>
