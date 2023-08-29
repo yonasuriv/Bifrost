@@ -34,16 +34,15 @@ Without giving it any arguments it will automatically create a **temporary** pro
 * Use ```bifrost -p``` to bring up the projects menu or simply 
 * Use ```bifrost -p <PROJECT NAME>``` to create it and switch to it immediately.<br>
 
-## Documentation
-Check the man page using the -h flag. <br><br>
-```bifrost -H```
-
 ## Contribution
 Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. <br>
 You can also support this project by suggesting any change/update/upgrade/feature 🙏
 
 ## Authors
 Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
+
+## Documentation
+See ```bifrost -H``` for more details
 
 ## Acknowledgements
 See ```CREDITS``` for more details.
