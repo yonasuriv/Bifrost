@@ -16,6 +16,7 @@ build () {
     chmod +x bifrost
     mkdir -p ~/.local/bin
     mv bifrost ~/.local/bin
+    rm $ origin > /dev/null 2>&1
     mkdir $origin > /dev/null 2>&1
     transfer
 
