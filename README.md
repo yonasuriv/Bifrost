@@ -22,10 +22,12 @@ Simply run the command ```bifrost```<br>
 
 **It is highly recommended to install the dependencies before running the program.**
 
-You can do it by running ```bifrost -X```. This will automatically install everything.<br>
+You can do it by running ```bifrost -X```
 
-You can either choose _normal_ or _debug mode_.<br>
-Where in normal the output won't be shown, only the name of the package being installed/updated (fastest).
+This will automatically install everything.<br>
+
+You can either choose _normal_ or _debug mode_.<br><br>
+Where in **normal** the output won't be shown, only the name of the package being installed/updated (fastest).
 
 ## Start a New Project
 
