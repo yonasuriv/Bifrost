@@ -99,7 +99,9 @@ projects_menu_select() {
             cd "projects/$selected_folder"
             start
         else
-            echo "Invalid selection."
+            echo
+            echo -n "\033[2A\033[0K $red    Incorrect selection. Aborting. $end"
+            exit
         fi
     fi
 }
@@ -139,7 +141,8 @@ handle_arguments() {
                 fi
                 ;;
             *)
-                echo "Invalid argument: $1"
+                echo
+                echo "Invalid argument. Use the $yellow2-h$end flag to see all the available commands."
                 exit 1
                 ;;
         esac
