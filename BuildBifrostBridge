@@ -30,7 +30,6 @@ build () {
         echo "$bridge" >> ~/.zshrc
     fi
     
-    echo
     echo "\033[1;32m Operation Completed Successfully.\033[0m"
     echo
     echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
