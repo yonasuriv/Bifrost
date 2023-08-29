@@ -20,3 +20,12 @@
 . ./.core/dependencies.sh
 . ./.core/target.sh
 . ./.core/arguments.sh
+
+bifrost_link() {
+    #sudoreq
+    clear
+    logo
+    target_data
+    menu
+    menu_select
+}
