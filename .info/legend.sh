@@ -1,3 +1,5 @@
+#!/bin/sh
+
 legend() {
         echo "$negative Legends $end"
         echo

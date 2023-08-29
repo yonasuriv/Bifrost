@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # IP range allowed on target. For domains please include the full domain address (http:// or https://)
 target_domain="" # 127.0.0.1

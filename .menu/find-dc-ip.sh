@@ -1,3 +1,5 @@
+#!/bin/sh
+
 find_dc_ip() {
     echo "$negative Find DC IP $end"
     echo

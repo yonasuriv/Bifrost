@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudoreq() {
     # Updates the OS packages repositories and asks for the sudo password to run all the dependencies

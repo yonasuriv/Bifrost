@@ -1,6 +1,4 @@
-dev="Jonathan Di Rico"
-site="https://www.yonasuriv.com/"
-version="1.0.3"
+#!/bin/sh
 
 credits () {
     #clear

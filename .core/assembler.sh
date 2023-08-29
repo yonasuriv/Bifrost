@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Styles
 . ./.assets/style.sh
 

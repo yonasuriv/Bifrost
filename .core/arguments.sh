@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Function to print the version
 print_version() {
     echo

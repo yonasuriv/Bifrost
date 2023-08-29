@@ -1,3 +1,5 @@
+#!/bin/sh
+
 network_scan () {
     echo "$negative Network Scan $end"
     echo

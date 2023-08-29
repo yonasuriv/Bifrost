@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ## - ASCII Banner Generators
 ## https://manytools.org/hacker-tools/ascii-banner/ -> Uses the excellent FIGlet JS by patorjk https://patorjk.com/software/taag/
 ##
