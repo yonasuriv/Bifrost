@@ -1,10 +1,16 @@
 #!/bin/sh
 
-# Function to print the version
 print_version() {
     echo
     echo "$cyan2 Bifrost Bridge Version: $version$end"
 }
+
+update () {
+    echo
+    git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
+    echo "\033[1;32m Bifrost Link successfully updated to the last version: $version\033[0m"
+    exit 0
+    }
 
 tmp_folder="zzz_BifrostEphemeral.tmp"
 
@@ -129,10 +135,7 @@ handle_arguments() {
                 exit 0
                 ;;
             -U|-u|-update)
-                echo
-                git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
-                echo "\033[1;32m Bifrost Link successfully updated to the last version: $version\033[0m"
-                exit 0
+                update
                 ;;
             -P|-p)
                 shift  # Consume the -p flag

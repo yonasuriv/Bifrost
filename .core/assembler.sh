@@ -23,6 +23,8 @@
 . ./.core/target.sh
 . ./.core/arguments.sh
 
+. ./.core/CONTROL
+
 bifrost_link() {
     #sudoreq
     clear
