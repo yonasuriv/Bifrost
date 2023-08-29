@@ -17,12 +17,16 @@ Stable-Experimental: Bifrost Link is currently under Development.
 ## Installation
 * ```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh BuildBifrostBridge```
 
-## Start
+## Run
 Simply run the command ```bifrost```<br>
 
 **It is highly recommended to install the dependencies before running the program.**
 
-You can do it by running ```bifrost -X```<br>
+You can do it by running ```bifrost -X```, this will automatically install everything.<br>
+
+You can either choose normal or debug mode, where in normal the output won't be shown, only the name of the package being installed/updated (fastest).
+
+## Start a New Project
 
 Without giving it any arguments it will automatically create a **temporary** project to work on, which will be deleted the next time Bifrost is run again.
 
