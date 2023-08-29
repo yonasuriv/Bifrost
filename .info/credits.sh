@@ -1,6 +1,6 @@
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
-version="1.0.2"
+version="1.0.3"
 
 credits () {
     #clear
