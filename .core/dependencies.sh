@@ -16,7 +16,15 @@ dependencies() {
 
     # List of all commands needed.
     # Usage [Command Display Name]:[Command Install Name]
-    command="Python 3:python3,Golang:golang-go,Nmap:nmap,CME:cme"
+    command="Python 3: python3,
+    Golang: golang-go,
+    Network Mapper: nmap,
+    CrackMapExec: cme,
+    Server Message Block Client: smbclient,
+    Network Manager Command-line Tool: network-manager,
+    DNS Utils: dnsutils,
+    Enum 4 Linux: enum4linux"
+
 
     # Function to print a progress bar
     print_progress_bar() {
@@ -34,7 +42,7 @@ dependencies() {
         space=$(printf "%0.s " $(seq 1 "$((width - current))"))
 
         # Print the progress bar
-        printf "\r[%s%s] %d%%" "$bar" "$space" "$progress"
+        printf "\r  [ %s%s] %d%%" "$bar" "$space" "$progress"
     }
 
     # Function to install packages and update progress
@@ -51,7 +59,7 @@ dependencies() {
 
             if [ "$debug" = "true" ]; then
                 # Execute the installation command and display its output
-                $install "$install_name"
+                $install "$install_name" 2>/dev/null | sed 's/^/  /'  # Added sed to display installation output with indentation
             else
                 # Print the progress bar
                 #echo -n "   "
@@ -97,7 +105,7 @@ dependencies() {
     sudoreq
 
     # Ask for installation mode
-    printf "     Choose installation mode (normal/debug) $white[default=normal]$end: "
+    printf "  Choose installation mode (normal/debug) $white[default=normal]$end: "
     read -r mode
 
     # Set debug flag based on user's choice (default to normal)
@@ -118,10 +126,10 @@ dependencies() {
     esac
 
     # Print the selected mode
-    echo
-    echo " $cyan $selected_mode Selected.$end "
-    echo
-    echo "  Starting to Install Bifrost Dependencies..."
+    echo " $cyan"
+    echo "  [$selected_mode Selected]" | tr '[:lower:]' '[:upper:]$end'
+    echo " $end"
+    echo " $dim Starting to Install Bifrost Dependencies...$end"
     sleep 2
 
     # Install packages and show progress

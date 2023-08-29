@@ -20,7 +20,7 @@ target_domain() {
         # Check if the target variable is empty
         if [ -z "$target_domain" ]; then
             echo
-            printf "  Enter the Target Domain or IP address/range: $red2" && read target_domain
+            printf " Enter the Target Domain or IP address/range: $red2" && read target_domain
             echo "$end"
             case "$target_domain" in
                 http://*|https://*)
@@ -28,7 +28,7 @@ target_domain() {
                     ;;
                 *)
                     while true; do
-                        printf "  Does the Target use a secure protocol (https)? $white[Y/n]$end: " && read input
+                        printf " Does the Target use a secure protocol (https)? $white[Y/n]$end: " && read input
                         case "$input" in
                             "y" | "Y" | "1" | "")
                                 url="https://$target_domain"
@@ -51,7 +51,7 @@ target_domain() {
     fi
 
     echo
-    echo "$yellow2  Establishing the bridge with the target.."
+    echo "$yellow2 Establishing the bridge with the target.."
     echo
 
     # Rest of your code for pinging and establishing the link
@@ -59,7 +59,7 @@ target_domain() {
 
     # Check the exit status of the ping command
     if [ $? -eq 0 ]; then
-        echo "$green2  Link Established succesfully.$end"
+        echo "$green2 Link Established succesfully.$end"
         sleep 3
         add_target="target_domain='$target_domain'"
         #echo "target_domain="$target_domain"" >> TARGET
@@ -68,7 +68,7 @@ target_domain() {
         #refresh_cp
         break
     else
-        echo "$red  Link Failed. Trying again..$end"
+        echo "$red Link Failed. Trying again..$end"
         sleep 3
         #target=""
         #refresh
@@ -88,7 +88,7 @@ target_username() {
         . "./TARGET"
         # Check if the target username variable is empty
         if [ -z "$target_username" ]; then
-            printf "  Enter the Target Username $white[press ENTER to skip]$end: $red" && read target_username
+            printf " Enter the Target Username $white[press ENTER to skip]$end: $red" && read target_username
             echo "$end"
             add_username="target_username=$target_username"
             #echo "target_username="$target_username"" >> TARGET
@@ -102,7 +102,7 @@ target_password() {
         . "./TARGET"
         # Check if the target password variable is empty
         if [ -z "$target_password" ]; then
-            printf "  Enter the Target Password $white[press ENTER to skip]$end: $red" && read target_password
+            printf " Enter the Target Password $white[press ENTER to skip]$end: $red" && read target_password
             echo "$end"
             #echo "target_password="$target_password"" >> TARGET
             add_password="target_password=$target_password"
