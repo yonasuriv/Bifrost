@@ -39,6 +39,37 @@ tmp() {
     cp "../../.core/create_target.sh" "../../projects/tmp/TARGET"
 }
 
+folder_menu() {
+    counter=1
+
+    # Loop through each folder in the current directory
+    for project_dir in ./projects/*/; do
+        project_name=$(basename "$project_dir")  # Remove trailing slash and path
+        #echo "$counter. $project_name"  # Print the option
+        counter=$((counter + 1))  # Increment the counter
+    done
+
+    # Prompt the user for their choice
+    #printf "Select an option (1-%d): " "$((counter - 1))"
+    read choice
+
+    # Validate the user's choice
+    if [ "$choice" -ge 1 ] && [ "$choice" -lt "$counter" ]; then
+        counter=1
+        for project_dir in ./projects/*/; do
+            if [ "$counter" -eq "$choice" ]; then
+                selected_folder=$(basename "$project_dir")
+                break
+            fi
+            counter=$((counter + 1))
+        done
+        echo "You selected: $selected_folder"
+    else
+        echo "Invalid selection."
+    fi
+}
+
+
 # Function to display the project menu
 projects_menu() {
     local project_name="$1"
@@ -52,34 +83,57 @@ projects_menu() {
         echo
         echo -n "     Enter your choice: $white" && read choice
         echo "$end"
+        projects_menu_select
+        done
+        }
 
-        if [ "$choice" = "t" ] || [ "$choice" = "T" ]; then
-            tmp
-            echo "$yellow2     Starting a temporary project..$end"
-            sleep 2
-            start
-        elif [ "$choice" = "n" ] || [ "$choice" = "N" ]; then
-            echo -n "     Enter project name: $green" && read project_name
-            mkdir -p "projects/$project_name"
-            cd "projects/$project_name" #|| exit
-            echo "$end"
-            cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
-            echo "$green2     Project $project_name Created. Starting..$end"
-            sleep 2
-            start
-        elif [[ "$choice" =~ ^[0-9]+$ && "$choice" -ge 0 && "$choice" -lt ${#directory_list[@]} ]]; then
-            selected_directory="${directory_list[choice]}"
-            echo "You selected directory: $selected_directory"
+projects_menu_select() {
+    counter=1
 
-        elif [ "$choice" = "0" ]; then
-            credits
-            exit
-        else
-            echo
-            error_argument
-        fi
+    # Loop through each folder in the current directory
+    for project_dir in ./projects/*/; do
+        project_name=$(basename "$project_dir")  # Remove trailing slash and path
+        #echo "$counter. $project_name"  # Print the option
+        counter=$((counter + 1))  # Increment the counter
     done
+
+    if [ "$choice" = "t" ] || [ "$choice" = "T" ]; then
+        tmp
+        echo "$yellow2     Starting a temporary project..$end"
+        sleep 2
+        start
+    elif [ "$choice" = "n" ] || [ "$choice" = "N" ]; then
+        echo -n "     Enter project name: $green" && read project_name
+        mkdir -p "projects/$project_name"
+        cd "projects/$project_name" || exit
+        echo "$end"
+        cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
+        echo "$green2     Project $project_name Created. Starting..$end"
+        sleep 2
+        start
+    elif [ "$choice" = "0" ]; then
+        credits
+        exit
+    else
+        if [ "$choice" -ge 1 ] && [ "$choice" -lt "$counter" ]; then
+            counter=1
+            for project_dir in ./projects/*/; do
+                if [ "$counter" -eq "$choice" ]; then
+                    selected_folder=$(basename "$project_dir")
+                    break
+                fi
+                counter=$((counter + 1))
+            done
+            echo "You selected: $selected_folder"
+            cd "projects/$selected_folder"
+            start
+        else
+            echo "Invalid selection."
+        fi
+    fi
 }
+
+
 
 # Function to handle command-line arguments
 handle_arguments() {
@@ -90,6 +144,7 @@ handle_arguments() {
                 exit 0
                 ;;
             -p)
+                clear # debug, delete after
                 projects_menu
                 ;;
             *)

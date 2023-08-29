@@ -77,24 +77,7 @@ menu_return (){
 error_argument() {
         echo -n "\033[2A\033[0K $red    Incorrect selection. Try again: $end"
         while true; do
-            read -p ""  input
-            case $input in
-                [yY]*)
-                    clear
-                    logo
-                    menu
-                    break
-                    ;;
-                [nN]*)
-                    clear
-                    credits
-                    exit 1
-                    ;;
-                *)
-                    echo
-                    error
-                    menu
-            esac
+            read -p ""  choice
         done
         echo
         }
