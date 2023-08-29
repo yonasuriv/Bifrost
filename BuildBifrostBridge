@@ -18,7 +18,7 @@ build () {
     rm -rf "$origin"
     #mkdir $origin > /dev/null 2>&1
     #transfer
-    mv -f "$location $origin"
+    mv -f "$location" "$origin"
 
     # Check if the line already exists in ~/.bashrc and append it if not
     if ! grep -qF "$bridge" ~/.bashrc; then
