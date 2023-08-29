@@ -1,5 +1,3 @@
-# Bifrost Link
-
 <p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/f54a434f-6c66-4d0c-8962-97bd2a62d16a"></a></p>
 <p align="center"><img width="500"src="https://github.com/yonasuriv/bifrost/assets/59540565/f24d0614-0d62-4d74-a5af-a1456b9cca24"></a></p>
 
