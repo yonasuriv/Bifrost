@@ -14,19 +14,22 @@ The approach of this project is to make the work more efficient and to also be u
 ```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh bifrost.sh```
 
 ## Software Pre-Prequisites
-To install all the dependencies, simply run ```sh bifrost.sh -X```
+To install all the dependencies, simply run:<br>
+```sh bifrost.sh -X```
 
 ## Start
-After installing all the dependencies, simply run the command without any argument: ```sh bifrost.sh```
+After installing all the dependencies, simply run the command without any argument.<br>
+```sh bifrost.sh```
 
 ## Documentation
-Check the man page using the -h flag. ```sh bifrost.sh -H```
+Check the man page using the -h flag. <br>
+```sh bifrost.sh -H```
 
 ## Distribution
 Bifrost Link is currently under development.
 
 ## Contribution
-Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. 
+Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. <br>
 You can also support this project by suggesting any change/update/upgrade/feature 🙏
 
 ## Authors
@@ -36,8 +39,7 @@ Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
 See ```CREDITS``` for more details.
 
 ## License
-MIT. 
- 
+MIT. <br> 
 See ```LICENSE``` for more details.
 
 
