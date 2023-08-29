@@ -7,7 +7,6 @@ location=$(pwd)
 transfer=$(mv -f $location $origin)
 
 build () {
-   
     echo
     echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
     echo
@@ -37,4 +36,4 @@ build () {
     }
 
 # Build Bifrost Bridge
-# build
+build
