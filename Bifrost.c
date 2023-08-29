@@ -1,5 +1,5 @@
 #!/bin/sh
-. $origins/.core/assembler.sh
+. ~/.local/share/Bifrost/.core/assembler.sh
 
 start() {
     #sudoreq

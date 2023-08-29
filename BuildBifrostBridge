@@ -4,7 +4,6 @@ build_bridge () {
 
     location=$(pwd)
     transfer=sudo cp -r $location ~/.local/share/Bifrost
-    origins="~/.local/share/Bifrost"
     bridge='export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
     echo
