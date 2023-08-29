@@ -1,17 +1,17 @@
 network_scan () {
     echo "$negative Network Scan $end"
     echo
-    echo "  1) $command$crackmapexec Enumerate SMB hosts$dim cme smb <ip_range>$end"
-    echo "  2) $command   Search SMB Vulnerability$dim nmap -PN --script smb-vuln* -p139,445 <ip>$end"
-    echo "  3) $command   Ping Scan$dim nmap -sP -p <ip>$end"
-    echo "  4) $command   Quick Scan $dim nmap -PN -sV --top-ports 50 --open <ip>$end"
-    echo "  5) $command   Classic Scan $dim nmap -PN -sC -sV -oA <output> <ip>$end"
-    echo "  6) $command   Full Scan$dim nmap -PN -sC -sV -p- -oA <output> <ip>$end"
-    echo "  7) $command   UDP Scan$dim nmap -sU -sC -sV -oA <output> <ip>$end"
+    echo "  1) $command Enumerate SMB hosts$dim cme smb <ip_range>$end $crackmapexec"
+    echo "  2) $command Search SMB Vulnerability$dim nmap -PN --script smb-vuln* -p139,445 <ip>$end"
+    echo "  3) $command Ping Scan$dim nmap -sP -p <ip>$end"
+    echo "  4) $command Quick Scan $dim nmap -PN -sV --top-ports 50 --open <ip>$end"
+    echo "  5) $command Classic Scan $dim nmap -PN -sC -sV -oA <output> <ip>$end"
+    echo "  6) $command Full Scan$dim nmap -PN -sC -sV -p- -oA <output> <ip>$end"
+    echo "  7) $command UDP Scan$dim nmap -sU -sC -sV -oA <output> <ip>$end"
     echo
-    echo "  9)      Exit$end"
+    echo "  9)    Exit$end"
     echo
-    echo -n "   Choose one of the above options: "
+    echo -n "  Choose one of the above options: "
     network_scan_select
     }
 
