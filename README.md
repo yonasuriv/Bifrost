@@ -2,22 +2,24 @@
 
 ![Bifrost Link](https://github.com/yonasuriv/bifrost/assets/59540565/08a97b1b-e112-4aef-9d1d-b658b1390785)
 
-### Installation
+## Installation
 1. ```git clone https://github.com/yonasuriv/bifrost.git```
 2. ```sh bifrost.sh```
 3. Press ```X``` to install all the dependencies
 4. Enjoy
 
 
-### Distribution
+## Distribution
 Bifrost Link is currently under development.
 
-### Contribution
+## Contribution
 Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. 
 You can also support this project by suggesting any change/update/upgrade/feature 🙏
 
-### License
+## License
 MIT. See ```LICENSE``` for more details.
+
+---
 
 ### Images
 
