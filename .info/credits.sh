@@ -33,6 +33,8 @@ credits_info () {
     https://beta.hackndo.com $dim(@HackAndDo)$end
     https://orange-cyberdefense.github.io/ $yellow2(@OrangeCyberDefense)$end 
 
+    https://github.com/infosecn1nja $dim(@infosecn1nja)$end
+
     And many more... 
 
     $green2 If you would like to help in the development of this project, please send me a DM or just fork the project and create a push request.$end"""

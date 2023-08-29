@@ -9,9 +9,15 @@
 4. Enjoy
 
 
-### Development
-Want to contribute? Suggest any change/update/upgrade/feature or just fork the project.
+### Distribution
+Bifrost Link is currently under development.
 
+### Contribution
+Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. 
+You can also support this project by suggesting any change/update/upgrade/feature 🙏
+
+### License
+MIT. See ```LICENSE``` for more details.
 
 ### Images
 
