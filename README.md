@@ -5,7 +5,7 @@
 
 
 ## About
-Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable. to automate Penetration Testing Tasks.
+Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable.
 
 The approach of this project is to make the Penetration Testing work more efficient by Autimation and to also be used as a Training Tool for various platforms such as [HackTheBox](https://www.hackthebox.com/), [TryHackMe](https://tryhackme.com/) and other Playgrounds as well as for the preparation for various certifications related to cybersecurity. 
  
@@ -39,7 +39,7 @@ Without giving it any arguments it will automatically create a **temporary** pro
 
 ## Contribution
 Want to contribute? Awesome!<br> 
-The most basic way to show your support is to  **Star** ⭐ the project, or to **Raise Issues** 🚩. <br><br>
+The most basic way to show your support is to  **Star** ⭐ the project, or to **Raise Issues** 🚩. <br>
 You can also support this project by suggesting any _change/update/upgrade/feature_ 🙏
 
 ## Authors
