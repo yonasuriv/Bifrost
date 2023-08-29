@@ -13,7 +13,17 @@ build_bridge () {
     chmod +x bifrost
     mkdir -p ~/.local/bin
     sudo mv bifrost ~/.local/bin
-    echo $bridge>> ~/.bashrc && echo $bridge >> ~/.zshrc
+
+    # Check if the line already exists in ~/.bashrc and append it if not
+    if ! grep -qF "$bridge" ~/.bashrc; then
+        echo "$bridge" >> ~/.bashrc
+    fi
+
+    # Check if the line already exists in ~/.zshrc and append it if not
+    if ! grep -qF "$bridge" ~/.zshrc; then
+        echo "$bridge" >> ~/.zshrc
+    fi
+    
     echo "\033[1;32m Operation Completed Successfully.\033[0m"
     echo
     echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
