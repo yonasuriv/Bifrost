@@ -130,7 +130,7 @@ handle_arguments() {
                 echo
                 git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
                 echo
-                echo echo "\033[1;32m Bifrost Link Successfully updated to the last version: $version\033[0m"
+                echo "\033[1;32m Bifrost Link successfully updated to the last version: $version\033[0m"
                 exit 0
                 ;;
             -P|-p)
