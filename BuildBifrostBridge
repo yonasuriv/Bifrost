@@ -1,19 +1,26 @@
 #!/bin/sh
 
-echo
-echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
-echo
-sleep 2
-cp Bifrost.c bifrost
-chmod +x bifrost
-sudo mv bifrost /usr/local/bin/
-echo "\033[1;32m Operation Completed Successfully.\033[0m"
-echo
-echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
+build_bridge () {
+    location=$(pwd)
+    transfer=sudo cp -r $location ~/Desktop/Bifrost
+    bridge='export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
+    echo
+    echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
+    echo
+    sleep 2
+    cp Bifrost.c bifrost
+    chmod +x bifrost
+    mkdir -p ~/.local/bin
+    sudo mv bifrost ~/.local/bin
+    echo $bridge>> ~/.bashrc && echo $bridge >> ~/.zshrc
+    echo "\033[1;32m Operation Completed Successfully.\033[0m"
+    echo
+    echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
+    }
+
+# sudo mv bifrost /usr/local/bin/
 # Create and add Bifrost to a custom directory
-#
-# mkdir -p ~/bin
-# sudo mv bifrost ~/bin/
-# echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
-# echo 'export PATH="$PATH:$HOME/bin"' >> ~/.zshrc
+
+# Build Start
+build_bridge
