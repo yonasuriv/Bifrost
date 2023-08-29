@@ -26,8 +26,9 @@ You can do it by running ```bifrost -X```
 
 This will automatically install everything.<br>
 
-You can either choose _normal_ or _debug mode_.<br><br>
-Where in **normal** the output won't be shown, only the name of the package being installed/updated (fastest).
+You can either choose _normal_ or _debug mode_.<br>
+
+Where in **normal** the output won't be shown, only the name of the package being installed/updated _(fastest)_.
 
 ## Start a New Project
 
