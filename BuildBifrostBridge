@@ -17,7 +17,7 @@ build () {
     mkdir -p ~/.local/bin
     mv bifrost ~/.local/bin
     rm -r $origin > /dev/null 2>&1
-    mkdir $origin > /dev/null 2>&1
+    #mkdir $origin > /dev/null 2>&1
     transfer
 
     # Check if the line already exists in ~/.bashrc and append it if not
