@@ -37,19 +37,21 @@ Without giving it any arguments it will automatically create a **temporary** pro
 
 ## Contribution
 Want to contribute? Awesome!<br> 
-The most basic way to show your support is to  **Star** ⭐ the project, or to **Raise Issues** 🚩. <br>
+The most basic way to show your support is to  **Star** ⭐ the project or to **Raise Issues** 🚩. <br>
 You can also support this project by suggesting any _change/update/upgrade/feature_ 🙏
 
 ## Authors
-Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
+* Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
 
 ## Documentation
-See ```bifrost -H``` for more details
+
+* See [Gallery](https://github.com/yonasuriv/Bifrost/blob/main/docs/Gallery.md) for images
+
+* See ```bifrost -H``` for more details
 
 ## Acknowledgements
-See ```CREDITS``` for more details.
+* See ```CREDITS``` for more details.
 
 ## License
-MIT. <br> 
-See ```LICENSE``` for more details.
+* See ```LICENSE``` for more details. [MIT]
 
