@@ -38,7 +38,7 @@ Without giving it any arguments it will automatically create a **temporary** pro
 * Use ```bifrost -p <PROJECT NAME>``` to create it and switch to it immediately.<br>
 
 ## Contribution
-Want to contribute? Awesome! 
+Want to contribute? Awesome!<br> 
 The most basic way to show your support is to  **Star** ⭐ the project, or to **Raise Issues** 🚩. <br><br>
 You can also support this project by suggesting any _change/update/upgrade/feature_ 🙏
 
