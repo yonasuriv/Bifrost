@@ -57,8 +57,9 @@ target_domain() {
         echo "$red Link Failed. Trying again..$end"
         sleep 3
         #target=""
-        refresh
-        target
+        #refresh
+        #target
+        target_domain
     fi
 }
 

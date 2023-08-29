@@ -95,11 +95,10 @@ projects_menu_select() {
 
 no_project() {
     echo
-    echo "  No Project Selected. Switching to Ephemeral mode.."
+    echo "  No Project Selected. Entering Ephemeral mode.."
     sleep 2
     echo
     echo "  $yellow2[EPHEMERAL]$end Initializing$white Temporary Project$end."
-    echo
     sleep 3
     tmp
     target_domain

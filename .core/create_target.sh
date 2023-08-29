@@ -7,6 +7,7 @@ target_password="" # root
 
 # Modification below here is not recommended.
 # Only do it if you know what you're doing, otherwise it might break something.
-target="$target"
-ip="$target"
-ip_range="$target"
+ip="$target_domain"
+ip_range="$target_domain"
+
+target="$target_domain"
