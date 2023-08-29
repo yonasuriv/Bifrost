@@ -16,15 +16,35 @@ dependencies() {
 
     # List of all commands needed.
     # Usage [Command Display Name]:[Command Install Name]
-    command="Python 3: python3,
-    Golang: golang-go,
-    Network Mapper: nmap,
-    CrackMapExec: cme,
-    Server Message Block Client: smbclient,
-    Network Manager Command-line Tool: network-manager,
-    DNS Utils: dnsutils,
-    Enum 4 Linux: enum4linux"
+    command="Git:git,Python 3:python3,Python 3 PIP:python3-pip,Golang:golang-go,Network Mapper:nmap,CrackMapExec:cme,Server Message Block Client:smbclient,Network Manager Command-line Tool:network-manager,Network Related Tools:net-tools,DNS Utils:dnsutils,Enum 4 Linux:enum4linux,LDAP Client:ldap-utils"
+    command_special="
+        git clone https://github.com/lgandx/Responder # Responder
+        git clone https://github.com/fox-it/mitm6 # MITM6: 
+        git clone https://github.com/topotam/PetitPotam # PetitPotam
+        git clone https://github.com/rtandr01d/zerologon # ZeroLogon
+        git clone https://github.com/dirkjanm/CVE-2020-1472 # ZeroLogon PoC
+        git clone https://github.com/frohoff/ysoserial # Java Serialized Port
 
+        git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb # Exploit Database Search
+        ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit 
+        searchsploit -u
+        
+
+        # Included in the Tools Folder > Solo Scripts 
+        #
+        # - Secrets Dumpy (py) (included also with the Impacket Toolkit)
+        # - Restore Password (py) (included also with the Impacket Toolkit)
+        # - Proxy Logon (py)
+
+        # Included with the Metasploit Framework
+        #
+        # - Eternal Blue (MS17-010) Remote Exploit
+        # - SYSVOL & GPP (MS14-025)
+        # - Tomcat/JBoss Manager
+        # - Java RMI
+        "
+    command_special_python="
+        pip3 install impacket # Impacket"
 
     # Function to print a progress bar
     print_progress_bar() {
