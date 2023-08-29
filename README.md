@@ -1,6 +1,8 @@
 # Bifrost Link
 
 <p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/f54a434f-6c66-4d0c-8962-97bd2a62d16a"></a></p>
+<p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/42af2da3-ad6b-478c-98e5-1d32ecf9518b"></a></p>
+
 
 ## About
 Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable to automate Penetration Testing Tasks.
@@ -22,14 +24,16 @@ Bifrost Link is currently under development.
 Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. 
 You can also support this project by suggesting any change/update/upgrade/feature 🙏
 
-## License
-MIT. See ```LICENSE``` for more details.
-
 ## Authors
 Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
 
 ## Acknowledgements
 See ```CREDITS``` for more details.
+
+## License
+MIT. 
+ 
+See ```LICENSE``` for more details.
 
 
 ---
