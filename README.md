@@ -1,8 +1,14 @@
 # Bifrost Link
 
-![Bifrost Link](https://github.com/yonasuriv/bifrost/assets/59540565/08a97b1b-e112-4aef-9d1d-b658b1390785)
+<p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/f54a434f-6c66-4d0c-8962-97bd2a62d16a"></a></p>
 
-## Installation
+## About
+Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable to automate Penetration Testing Tasks.
+
+The approach of this project is to make the work more efficient and to also be used as a training tool for various platforms such as HackTheBox, TryHackMe and other Playgrounds as well as for the preparation for various certifications related to cybersecurity. Depending on the interactions between services and source or destination of traffic, rules are created and sorted by assignment.
+
+
+## Installation & Software Prerequisites
 1. ```git clone https://github.com/yonasuriv/bifrost.git```
 2. ```sh bifrost.sh```
 3. Press ```X``` to install all the dependencies
@@ -19,9 +25,18 @@ You can also support this project by suggesting any change/update/upgrade/featur
 ## License
 MIT. See ```LICENSE``` for more details.
 
+## Authors
+Jonathan Di RIco - WithSecure (F-Secure) Cyber Defence Service
+
+## Acknowledgements
+See ```CREDITS``` for more details.
+
+
 ---
 
 ### Images
+
+![Bifrost Link](https://github.com/yonasuriv/bifrost/assets/59540565/08a97b1b-e112-4aef-9d1d-b658b1390785)
 
 #### Network Scan Preview
 ![BF-NetScanPreview](https://github.com/yonasuriv/bifrost/assets/59540565/af72c206-2f8d-4e32-b74b-cc3824cb4167)

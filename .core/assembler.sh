@@ -1,5 +1,5 @@
 # Styles
-. ./.styles/colorama.sh
+. ./.assets/style.sh
 
 # Menu
 . ./.menu/main.sh
