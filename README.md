@@ -5,24 +5,26 @@
 
 
 ## About
-Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable to automate Penetration Testing Tasks.
+Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikipedia.org/wiki/Shell_script) and delivered as a single executable. to automate Penetration Testing Tasks.
 
-The approach of this project is to make the work more efficient and to also be used as a training tool for various platforms such as HackTheBox, TryHackMe and other Playgrounds as well as for the preparation for various certifications related to cybersecurity. Depending on the interactions between services and source or destination of traffic, rules are created and sorted by assignment.
+The approach of this project is to make the Penetration Testing work more efficient by Autimation and to also be used as a Training Tool for various platforms such as [HackTheBox](https://www.hackthebox.com/), [TryHackMe](https://tryhackme.com/) and other Playgrounds as well as for the preparation for various certifications related to cybersecurity. 
+ 
+Depending on the interactions between services and source or destination of traffic, rules are created and sorted by assignment.
 
 
 ## Installation
 ```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh bifrost.sh```
 
 ## Software Pre-Prequisites
-To install all the dependencies, simply run:<br>
+To install all the dependencies, simply run:<br><br>
 ```sh bifrost.sh -X```
 
 ## Start
-After installing all the dependencies, simply run the command without any argument.<br>
+After installing all the dependencies, simply run the command without any argument.<br><br>
 ```sh bifrost.sh```
 
 ## Documentation
-Check the man page using the -h flag. <br>
+Check the man page using the -h flag. <br><br>
 ```sh bifrost.sh -H```
 
 ## Distribution
