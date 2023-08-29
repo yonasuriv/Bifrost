@@ -1,7 +1,7 @@
 # Function to print the version
 print_version() {
     echo
-    echo "Bifrost Bridge Version: $version"
+    echo "$cyan2 Bifrost Bridge Version: $version$end"
 }
 
 tmp_folder="zzz_BifrostEphemeral.tmp"
