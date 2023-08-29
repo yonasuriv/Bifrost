@@ -21,7 +21,7 @@ menu () {
     echo "$negative Menu $end"
     echo
     echo "  1) Network Scan"
-    echo "  2)$dim Find DC IP $end"
+    echo "  2) Find DC IP"
     echo "  3)$dim Zone Transfer $end"
     echo "  4)$dim List Guest Access on SMB Share $end"
     echo "  5)$dim Enumerate LDAP $end"
@@ -43,7 +43,7 @@ menu_select  () {
     echo
     case $selection in
     1) network_scan;;
-    2) udev;;
+    2) find_dc_ip;;
     3) udev;;
     4) udev;;
     5) udev;;
@@ -59,15 +59,16 @@ menu_select  () {
 
 menu_return (){
     while true; do
-        read -p " Would you like to go back to the main menu? [Y/n] "  input
+        printf "     Would you like to go back to the main menu? $white[Y/n]$end: " && read input
         case $input in
             "y" | "Y" | "1" | "")
                 echo
-                echo " Reinitializing the Bifrost.."
+                echo "    $dim Reinitializing the Bifrost..$end"
                 sleep 3
                 start
                 ;;
             "n" | "N" | "2" | "")
+                echo
                 credits
                 exit 1
                 ;;

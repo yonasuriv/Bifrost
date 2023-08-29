@@ -7,7 +7,7 @@ print_version() {
 tmp_folder="zzz_BifrostEphemeral.tmp"
 
 tmp() {
-    rm -r "./projects/$tmp_folder"
+    rm -r "./projects/$tmp_folder" > /dev/null 2>&1
     mkdir -p "./projects/$tmp_folder"
     cd "projects/$tmp_folder" #|| exit
     cp "../../.core/create_target.sh" "../../projects/$tmp_folder/TARGET"
@@ -56,8 +56,9 @@ projects_menu_select() {
 
     if [ "$choice" = "t" ] || [ "$choice" = "T" ]; then
         tmp
-        echo "     $yellow2[EPHEMERAL]$end Initializing$white Temporary Project$end."
+        echo " $yellow2[EPHEMERAL]$end Initializing$white Temporary Project$end."
         sleep 3
+        target_prompt
         start
     elif [ "$choice" = "n" ] || [ "$choice" = "N" ]; then
         echo -n "     Enter project name: $green" && read project_name
@@ -65,8 +66,9 @@ projects_menu_select() {
         cd "projects/$project_name" || exit
         echo "$end"
         cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
-        echo "     $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
+        echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
         sleep 3
+        target_prompt
         start
     elif [ "$choice" = "0" ]; then
         credits
@@ -81,9 +83,10 @@ projects_menu_select() {
                 fi
                 counter=$((counter + 1))
             done
-            echo "     $cyan2[PROJECT FOUND]$end Initializing $white$selected_folder$end."
+            echo " $cyan2[PROJECT FOUND]$end Initializing $white$selected_folder$end."
             sleep 3
             cd "projects/$selected_folder"
+            target_prompt
             start
         else
             echo
@@ -101,9 +104,7 @@ no_project() {
     echo "  $yellow2[EPHEMERAL]$end Initializing$white Temporary Project$end."
     sleep 3
     tmp
-    target_domain
-    target_username
-    target_password
+    target_prompt
 }
 
 # Function to handle command-line arguments
@@ -129,23 +130,19 @@ handle_arguments() {
                 # Check if the folder already exists
                 if [ -d "projects/$project_name" ]; then
                     echo
-                    echo "     $cyan2[PROJECT FOUND]$end Initializing $white$project_name$end."
+                    echo " $cyan2[PROJECT FOUND]$end Initializing $white$project_name$end."
                     sleep 3
                     cd "projects/$project_name"
-                    target_domain
-                    target_username
-                    target_password
+                    target_prompt
                     start
                 else
                     mkdir -p "projects/$project_name"
                     cd "projects/$project_name" || exit
                     echo "$green"
                     cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
-                    echo "     $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
+                    echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
                     sleep 2
-                    target_domain
-                    target_username
-                    target_password
+                    target_prompt
                     start
                 fi
                 ;;

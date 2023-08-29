@@ -9,9 +9,9 @@ network_scan () {
     echo "  6) $command Full Scan$dim nmap -PN -sC -sV -p- -oA <output> <ip>$end"
     echo "  7) $command UDP Scan$dim nmap -sU -sC -sV -oA <output> <ip>$end"
     echo
-    echo "  9)    Exit$end"
+    echo "  9) Exit$end"
     echo
-    echo -n "  Choose one of the above options: "
+    echo -n "     Choose one of the above options: "
     network_scan_select
     }
 

@@ -1,5 +1,19 @@
 #!/bin/bash
 
+target_debug () {
+    echo
+    echo " $negative Target Debug Enabled $end"
+    echo
+    echo " ip $yellow2$ip$end"
+    echo " ip_range $yellow2$ip_range$end"
+    echo
+    echo " target $yellow2$target_domain$end"
+    echo " target_domain $yellow2$target_domain$end"
+    echo " target_username $yellow$target_username$end"
+    echo " target_password $yellow$target_password$end"
+    echo 
+    }
+
 target_domain() {
     if [ -f "./TARGET" ]; then
         . "./TARGET"
@@ -63,6 +77,12 @@ target_domain() {
     fi
 }
 
+target_prompt() {
+    target_domain
+    target_username
+    target_password
+    }
+
 target_username() {
     if [ -f "./TARGET" ]; then
         . "./TARGET"
@@ -98,6 +118,8 @@ target_data() {
         . "./TARGET"
         echo
         project_folder="$(basename "$PWD")"
+
+        #target_debug
 
         if [ "$project_folder" = "$tmp_folder" ]; then
             echo " Project:  $yellow2$project_folder$end"
