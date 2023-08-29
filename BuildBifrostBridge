@@ -1,8 +1,10 @@
 #!/bin/sh
 
 build_bridge () {
+
     location=$(pwd)
-    transfer=sudo cp -r $location ~/Desktop/Bifrost
+    transfer=sudo cp -r $location ~/.local/share/Bifrost
+    origins="~/.local/share/Bifrost"
     bridge='export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
     echo
@@ -24,6 +26,7 @@ build_bridge () {
         echo "$bridge" >> ~/.zshrc
     fi
     
+    echo
     echo "\033[1;32m Operation Completed Successfully.\033[0m"
     echo
     echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."

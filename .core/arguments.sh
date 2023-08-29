@@ -126,6 +126,13 @@ handle_arguments() {
                 print_version
                 exit 0
                 ;;
+            -U|-u|--update)
+                echo
+                git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
+                echo
+                echo echo "\033[1;32m Bifrost Link Successfully updated to the last version: $version\033[0m"
+                exit 0
+                ;;
             -P|-p)
                 shift  # Consume the -p flag
                 if [ $# -eq 0 ]; then
@@ -166,4 +173,3 @@ handle_arguments() {
         shift
     done
 }
-

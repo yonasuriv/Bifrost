@@ -1,5 +1,5 @@
 #!/bin/sh
-. ./.core/assembler.sh
+. $origins/.core/assembler.sh
 
 start() {
     #sudoreq
