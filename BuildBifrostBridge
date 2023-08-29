@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo
+echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
+echo
+sleep 2
+cp Bifrost.c bifrost
+chmod +x bifrost
+sudo mv bifrost /usr/local/bin/
+echo "\033[1;32m Operation Completed Successfully.\033[0m"
+echo
+echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
+
+# Create and add Bifrost to a custom directory
+#
+# mkdir -p ~/bin
+# sudo mv bifrost ~/bin/
+# echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
+# echo 'export PATH="$PATH:$HOME/bin"' >> ~/.zshrc

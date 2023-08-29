@@ -15,19 +15,23 @@ Depending on the interactions between services and source or destination of traf
 Stable-Experimental: Bifrost Link is currently under Development.
 
 ## Installation
-```git clone https://github.com/yonasuriv/bifrost.git```
+1. ```git clone https://github.com/yonasuriv/bifrost.git```
+2. ```sh BuildBifrostBridge```
+
+## Start
+After installing all the dependencies, simply run the command ```bifrost```<br>
+
+Without giving it any arguments it will automatically create a **temporary** project to work on, which will be deleted the next time Bifrost is run again.
+
+To create a new project use the ```-p``` argument to bring up the projects menu or simply ```-p <PROJECT NAME>``` to create it and use it immediately.<br>
 
 ## Software Pre-Prequisites
 To install all the dependencies, simply run:<br><br>
-```sh bifrost.sh -X```
-
-## Start
-After installing all the dependencies, simply run the command without any argument.<br><br>
-```sh bifrost.sh```
+```bifrost -X```
 
 ## Documentation
 Check the man page using the -h flag. <br><br>
-```sh bifrost.sh -H```
+```bifrost -H```
 
 ## Contribution
 Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. <br>

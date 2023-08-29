@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 . ./.core/assembler.sh
 
 start() {
