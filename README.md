@@ -1,7 +1,7 @@
 # Bifrost Link
 
 <p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/f54a434f-6c66-4d0c-8962-97bd2a62d16a"></a></p>
-<p align="center"><img width="100"src="https://github.com/yonasuriv/bifrost/assets/59540565/42af2da3-ad6b-478c-98e5-1d32ecf9518b"></a></p>
+<p align="center"><img width="500"src="https://github.com/yonasuriv/bifrost/assets/59540565/f24d0614-0d62-4d74-a5af-a1456b9cca24"></a></p>
 
 
 ## About
@@ -10,12 +10,17 @@ Bifrost Link 🔗 is an application written mainly in [Shell](https://en.wikiped
 The approach of this project is to make the work more efficient and to also be used as a training tool for various platforms such as HackTheBox, TryHackMe and other Playgrounds as well as for the preparation for various certifications related to cybersecurity. Depending on the interactions between services and source or destination of traffic, rules are created and sorted by assignment.
 
 
-## Installation & Software Prerequisites
-1. ```git clone https://github.com/yonasuriv/bifrost.git```
-2. ```sh bifrost.sh```
-3. Press ```X``` to install all the dependencies
-4. Enjoy
+## Installation
+```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh bifrost.sh```
 
+## Software Pre-Prequisites
+To install all the dependencies, simply run ```sh bifrost.sh -X```
+
+## Start
+After installing all the dependencies, simply run the command without any argument: ```sh bifrost.sh```
+
+## Documentation
+Check the man page using the -h flag. ```sh bifrost.sh -H```
 
 ## Distribution
 Bifrost Link is currently under development.
