@@ -5,8 +5,9 @@ sudoreq() {
     if sudo -n true 2>/dev/null; then
     sudo apt update > /dev/null 2>&1
     else
+        #echo
+        echo -n "    $red2 This action requires elevated privileges.$end Please enter the " && sudo apt update > /dev/null 2>&1
         echo
-        echo -n "  This script requires elevated privileges, please enter the " && sudo apt update > /dev/null 2>&1
     fi
     }
 
@@ -92,8 +93,11 @@ dependencies() {
         echo
     }
 
+    # Ask for sudo password
+    sudoreq
+
     # Ask for installation mode
-    printf "  Choose installation mode (normal/debug) $white[default=normal]$end: "
+    printf "     Choose installation mode (normal/debug) $white[default=normal]$end: "
     read -r mode
 
     # Set debug flag based on user's choice (default to normal)

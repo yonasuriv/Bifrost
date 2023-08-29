@@ -5,9 +5,14 @@ refresh() {
     logo
     }
 
-refresh_cp() { # refresh but with data kept
+udev() { # refresh but with data kept
+    echo "    $yellow2 This feature is currently under development.$end"
+    echo
+    sleep 2
+    echo "    $white Reinitializing..$end"
+    sleep 2
     refresh
-    data
+    target_data
     menu
     }
 
@@ -39,13 +44,13 @@ menu_select  () {
     echo
     case $selection in
     1) network_scan;;
-    2) refresh_cp;;
-    3) refresh_cp;;
-    4) refresh_cp;;
-    5) refresh_cp;;
-    6) refresh_cp;;
-    7) refresh_cp;;
-    8) refresh_cp;;
+    2) udev;;
+    3) udev;;
+    4) udev;;
+    5) udev;;
+    6) udev;;
+    7) udev;;
+    8) udev;;
     0) credits; exit;;
     [Ll]) legend;;
     [Xx]) dependencies; menu_return;;
@@ -58,8 +63,10 @@ menu_return (){
         read -p " Would you like to go back to the main menu? [Y/n] "  input
         case $input in
             "y" | "Y" | "1" | "")
-                refresh_cp
-                break
+                echo
+                echo " Reinitializing the Bifrost.."
+                sleep 3
+                start
                 ;;
             "n" | "N" | "2" | "")
                 credits
