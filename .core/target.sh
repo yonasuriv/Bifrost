@@ -1,37 +1,43 @@
 #!/bin/bash
 
 target_domain() {
-    # Check if the target variable is empty
-    if [ -z "$target_domain" ]; then
-        printf " Enter the target domain or IP address/range: $red" && read target_domain
-        echo "$end"
-        case "$target_domain" in
-            http://*|https://*)
-                url="$target_domain"
-                ;;
-            *)
-                while true; do
-                    printf " Does the target use a secure protocol (https)? $dim[Y/n]$end: " && read input
-                    case "$input" in
-                        "y" | "Y" | "1" | "")
-                            url="https://$target_domain"
-                            break
-                            ;;
-                        "n" | "N" | "2" | "")
-                            url="http://$target_domain"
-                            break
-                            ;;
-                        *)
-                            echo "Please enter 'y' for yes or 'n' for no."
-                            ;;
-                    esac
-                done
-                ;;
-        esac
+    if [ -f "./TARGET" ]; then
+        . "./TARGET"
+        # Check if the target variable is empty
+        if [ -z "$target_domain" ]; then
+            echo
+            printf " Enter the Target Domain or IP address/range: $red2" && read target_domain
+            echo "$end"
+            case "$target_domain" in
+                http://*|https://*)
+                    url="$target_domain"
+                    ;;
+                *)
+                    while true; do
+                        printf " Does the Target use a secure protocol (https)? $white[Y/n]$end: " && read input
+                        case "$input" in
+                            "y" | "Y" | "1" | "")
+                                url="https://$target_domain"
+                                break
+                                ;;
+                            "n" | "N" | "2" | "")
+                                url="http://$target_domain"
+                                break
+                                ;;
+                            *)
+                                echo
+                                echo " Please enter 'y' for yes or 'n' for no."
+                                echo
+                                ;;
+                        esac
+                    done
+                    ;;
+            esac
+        fi
     fi
 
     echo
-    echo "$yellow Establishing the bridge with the target"
+    echo "$yellow2 Establishing the bridge with the target.."
     echo
 
     # Rest of your code for pinging and establishing the link
@@ -39,12 +45,17 @@ target_domain() {
 
     # Check the exit status of the ping command
     if [ $? -eq 0 ]; then
-        echo "$green Link Established"
-        sleep 4
-        refresh_cp
+        echo "$green2 Link Established succesfully.$end"
+        sleep 3
+        add_target="target_domain='$target_domain'"
+        #echo "target_domain="$target_domain"" >> TARGET
+        sed -i "4s/.*/$add_target/" TARGET
+        echo
+        #refresh_cp
+        break
     else
-        echo "$red Link Failed. Trying again.."
-        sleep 4
+        echo "$red Link Failed. Trying again..$end"
+        sleep 3
         #target=""
         refresh
         target
@@ -52,22 +63,30 @@ target_domain() {
 }
 
 target_username() {
-    echo "$cyan2"
-
-    # Check if the target username variable is empty
-    if [ -z "$target_username" ]; then
-        printf "$cyan Enter the target username (if any), press [ENTER] to skip: $end" && read target_username
-        echo
+    if [ -f "./TARGET" ]; then
+        . "./TARGET"
+        # Check if the target username variable is empty
+        if [ -z "$target_username" ]; then
+            printf " Enter the Target Username $white[press ENTER to skip]$end: $red" && read target_username
+            echo "$end"
+            add_username="target_username=$target_username"
+            #echo "target_username="$target_username"" >> TARGET
+            sed -i "5s/.*/$add_username/" TARGET
+        fi
     fi
 }
 
 target_password() {
-    echo "$cyan2"
-
-    # Check if the target password variable is empty
-    if [ -z "$target_password" ]; then
-        printf "$cyan Enter the target password (if any), press [ENTER] to skip: $end" && read target_password
-        echo
+    if [ -f "./TARGET" ]; then
+        . "./TARGET"
+        # Check if the target password variable is empty
+        if [ -z "$target_password" ]; then
+            printf " Enter the Target Password $white[press ENTER to skip]$end: $red" && read target_password
+            echo "$end"
+            #echo "target_password="$target_password"" >> TARGET
+            add_password="target_password=$target_password"
+            sed -i "6s/.*/$add_password/" TARGET
+        fi
     fi
 }
 
@@ -79,7 +98,7 @@ target_data() {
         echo
         project_folder="$(basename "$PWD")"
 
-        if [ "$project_folder" = "tmp" ]; then
+        if [ "$project_folder" = "$tmp_folder" ]; then
             echo " Project:  $yellow2$project_folder$end"
         else
             echo " Project:  $green2$project_folder$end"
@@ -87,7 +106,7 @@ target_data() {
 
         # Check if target_domain exists and print it
         if [ -n "$target_domain" ]; then
-            echo " Domain:   $red$target_domain$end"
+            echo " Domain:   $red2$target_domain$end"
         fi
 
         # Check if target_username exists and print it
@@ -103,5 +122,8 @@ target_data() {
         # If TARGET file doesn't exist, print a message
         tmp    
         target_data 
+        #echo "$red Target File not found. Aborting.. $end"
+        #sleep 2
+        #exit
     fi
 }

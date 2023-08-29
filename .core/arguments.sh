@@ -15,6 +15,7 @@ tmp() {
 
 list_projects() {
     local project_index=1
+
     for project_dir in projects/*/; do
         if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "$tmp_folder" ]; then
             project_name=$(basename "$project_dir")
@@ -29,6 +30,8 @@ projects_menu() {
     local project_name="$1"
 
     while true; do
+        echo
+        echo "$negative BIFROST PROJECT LINK $end"
         echo
         list_projects
         echo 
@@ -96,13 +99,18 @@ no_project() {
     sleep 2
     echo
     echo "  $yellow2[EPHEMERAL]$end Initializing$white Temporary Project$end."
+    echo
     sleep 3
+    tmp
+    target_domain
+    target_username
+    target_password
 }
 
 # Function to handle command-line arguments
 handle_arguments() {
     if [ $# -eq 0 ]; then
-        #no_project
+        no_project
         return
     fi
 
@@ -125,6 +133,9 @@ handle_arguments() {
                     echo "     $cyan2[PROJECT FOUND]$end Initializing $white$project_name$end."
                     sleep 3
                     cd "projects/$project_name"
+                    target_domain
+                    target_username
+                    target_password
                     start
                 else
                     mkdir -p "projects/$project_name"
@@ -133,6 +144,9 @@ handle_arguments() {
                     cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
                     echo "     $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
                     sleep 2
+                    target_domain
+                    target_username
+                    target_password
                     start
                 fi
                 ;;

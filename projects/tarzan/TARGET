@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # IP range allowed on target. For domains please include the full domain address (http:// or https://)
-target="127.0.0.1" # 127.0.0.1
-target_username="jungleKing" # admin
-target_password="jane" # root
+target_domain="127.0.0.1"
+target_username="jungleKing"
+target_password="jane"
 
-# Do not modify below here
+# Modification below here is not recommended.
+# Only do it if you know what you're doing, otherwise it might break something.
 ip="$target"
 ip_range="$target"
-target_domain="$target"
+target="$target"

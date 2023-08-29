@@ -3,10 +3,13 @@ site="https://www.yonasuriv.com/"
 version="1.0.0"
 
 credits () {
-    clear
-    echo 
-    echo """ Bifrost Bridge with$red ❤$end by $dev —$dim $site $end
+    #clear
+    #echo 
+    echo "     Bifrost Bridge with$red ❤$end by $dev —$dim $site $end"
+    }
 
+credits_info () {
+    echo """
     $negative Credits $end
 
     mayfly $dim(@M4yFly)$end 
@@ -33,14 +36,4 @@ credits () {
     And many more... 
 
     $green2 If you would like to help in the development of this project, please send me a DM or just fork the project and create a push request.$end"""
-    }
-
-loader () {
-    clear
-    echo 
-    credits
-    sleep 1
-    echo " Starting.."
-    sleep 2
-    clear
-    }
+}

@@ -18,7 +18,6 @@ udev() { # refresh but with data kept
 
 menu () {
     echo
-    echo
     echo "$negative Menu $end"
     echo
     echo "  1) Network Scan"
