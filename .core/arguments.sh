@@ -15,14 +15,20 @@ tmp() {
 
 list_projects() {
     local project_index=1
+    local found_projects=false
 
     for project_dir in projects/*/; do
         if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "$tmp_folder" ]; then
             project_name=$(basename "$project_dir")
-            echo "  $project_index) Project $green2$project_name$end"
+            echo "  $project_index) $dim[PROJECT]$end $green2$project_name$end"
             project_index=$((project_index + 1))
+            found_projects=true
         fi
     done
+
+    if [ "$found_projects" = false ]|| [ ! -d "projects/$tmp_folder" ]; then
+        echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
+    fi
 }
 
 # Function to display the project menu
@@ -35,8 +41,8 @@ projects_menu() {
         echo
         list_projects
         echo 
-        echo "  T) Temporary Project"
-        echo "  N) New Project"
+        echo "  N) Create New Project"
+        echo "  T) Create New Temporary Project"
         echo
         echo -n "     Enter your choice: $white" && read choice
         echo "$end"
@@ -116,11 +122,11 @@ handle_arguments() {
 
     while [ $# -gt 0 ]; do
         case "$1" in
-            -v|--version)
+            -V|-v|--version)
                 print_version
                 exit 0
                 ;;
-            -p)
+            -P|-p)
                 shift  # Consume the -p flag
                 if [ $# -eq 0 ]; then
                     projects_menu
@@ -145,6 +151,11 @@ handle_arguments() {
                     target_prompt
                     start
                 fi
+                ;;
+            -X|-x)
+                echo
+                dependencies
+                exit 1
                 ;;
             *)
                 echo

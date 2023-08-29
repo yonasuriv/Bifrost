@@ -20,4 +20,3 @@
 . ./.core/dependencies.sh
 . ./.core/target.sh
 . ./.core/arguments.sh
-#. ./.core/project.sh
