@@ -2,14 +2,14 @@
 
 print_version() {
     echo
-    echo "$cyan2 Bifrost Bridge Version: $version$end"
+    echo "$cyan2 Bifrost Link Version: $version$end"
 }
 
 update () {
     echo
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
-    echo "\033[1;32m Bifrost Link successfully updated to the last version: $version\033[0m"
+    echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
     exit 0
     }
 
@@ -137,6 +137,8 @@ handle_arguments() {
                 ;;
             -U|-u|-update)
                 update
+                echo
+                print_version
                 ;;
             -P|-p)
                 shift  # Consume the -p flag
