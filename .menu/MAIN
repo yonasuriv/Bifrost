@@ -34,6 +34,8 @@ menu () {
     echo "  L) Show Legend"
     echo "  X) Install Dependencies"
     echo
+    echo "  C) Change Credentials" # Have to create a file called credentials that read the file target and modify it once created all arguments from the 8 menu options
+    echo
     echo -n "     Choose one of the above options: "
     menu_select
     }
@@ -53,6 +55,7 @@ menu_select  () {
     [Ee]) credits; exit;;
     [Ll]) legend;;
     [Xx]) dependencies; menu_return;;
+    [Cc]) udev;;
     *) error_menu ; menu_return;;
     esac
     }
