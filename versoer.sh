@@ -80,4 +80,6 @@ sed -i "s/version=\"$version\"/version=\"$new_version\"/" "$control_file_path"
 echo "$end"
 
 # Commit changes to Git
-git add . && git commit -m "$reason" && git push
+git add . && git commit -m "$reason" && git push > /dev/null 2>&1
+
+echo $version
