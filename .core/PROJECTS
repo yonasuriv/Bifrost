@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. $origin/.core/CONTROL
+
 tmp_folder="zzz_BifrostEphemeral.tmp"
 
 tmp() {
