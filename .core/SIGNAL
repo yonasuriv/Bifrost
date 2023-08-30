@@ -1,6 +1,8 @@
 #!/bin/sh
 
-. ASSEMBLER
+
+omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
+. $omega/.core/ASSEMBLER
 
 start () {
     #sudoreq

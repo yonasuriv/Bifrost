@@ -4,17 +4,9 @@
 
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
-version="1.3.14"
+version="1.4.0"
 
-script_name="bifrost" # Script Name
-script_alias="LINK" # Script Name
-package_folder="Bifrost" # Folder Containing all the files
-builder_name="Bifrost Bridge" # Builder Name
-alpha=$(pwd) # Directory where the script is being run (Current)
-exec_dir=~/.local/bin # Directory where the executable will be placed 
-omega=~/.local/share/$package_folder # Final Directory Destination of the Package Folder
 
-export_path='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
 # [PACKAGE INFORMATION]
 
