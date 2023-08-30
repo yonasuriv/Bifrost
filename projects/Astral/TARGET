@@ -7,7 +7,6 @@ target_password=aAsBaWsWaUsS#369S
 
 # Modification below here is not recommended.
 # Only do it if you know what you're doing, otherwise it might break something.
-
 url="$target_domain"
 target="$target_domain"
 

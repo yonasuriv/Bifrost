@@ -24,18 +24,18 @@ target_domain() {
             echo "$end"
             case "$target_domain" in
                 http://*|https://*)
-                    url='"$target_domain"'
+                    url="$target_domain"
                     ;;
                 *)
                     while true; do
                         printf "  Does the Target use a secure protocol (https)? $white[Y/n]$end: " && read input
                         case "$input" in
                             "y" | "Y" | "1" | "")
-                                url="https://$target_domain"
+                                url=https://$target_domain
                                 break
                                 ;;
                             "n" | "N" | "2" | "")
-                                url="http://$target_domain"
+                                url=http://$target_domain
                                 break
                                 ;;
                             *)
@@ -90,7 +90,7 @@ target_username() {
         if [ -z "$target_username" ]; then
             printf "  Enter the Target Username $white[press ENTER to skip]$end: $red" && read target_username
             echo "$end"
-            add_username='target_username="$target_username"'
+            add_username="target_username=$target_username"
             #echo "target_username="$target_username"" >> TARGET
             sed -i "5s/.*/$add_username/" TARGET
         fi
@@ -105,7 +105,7 @@ target_password() {
             printf "  Enter the Target Password $white[press ENTER to skip]$end: $red" && read target_password
             echo "$end"
             #echo "target_password="$target_password"" >> TARGET
-            add_password='target_password="$target_password"'
+            add_password="target_password=$target_password"
             sed -i "6s/.*/$add_password/" TARGET
         fi
     fi
