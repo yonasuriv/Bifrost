@@ -15,7 +15,7 @@ print_version() {
         # Use curl to fetch the remote CONTROL file and extract the version value
         remote_version=$(curl -s "$remote_url" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
         echo "$remote_version"
-    }
+        }
 
     # Compare the local and remote versions
     compare_versions() {
@@ -29,7 +29,7 @@ print_version() {
             echo
             echo "$dim Bifrost Link Version: $version$end $green2[UP TO DATE]$end"
         fi
-    }
+        }
 
     # Fetch the remote version
     remote_version=$(get_remote_version)
@@ -55,7 +55,7 @@ update() {
         # Use curl to fetch the remote CONTROL file and extract the version value
         remote_version=$(curl -s "$remote_url" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
         echo "$remote_version"
-    }
+        }
 
     # Compare the local and remote versions
     compare_versions() {
@@ -73,7 +73,7 @@ update() {
             update_start
             echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
         fi
-    }
+        }
 
     # Fetch the remote version
     remote_version=$(get_remote_version)
