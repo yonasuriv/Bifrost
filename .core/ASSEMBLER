@@ -2,11 +2,7 @@
 
 # Core
 . $origin/.core/CONTROL
-. $origin/.core/DEPENDENCIES
-. $origin/.core/TARGET
-. $origin/.core/ARGUMENTS
-. $origin/.core/PROJECTS
-. $origin/.core/UPDATER
+
 
 # Assets
 . $origin/.assets/CSS
@@ -28,6 +24,12 @@
 . $origin/.info/CREDITS
 . $origin/.info/LEGEND
 . $origin/.info/MAN
+
+. $origin/.core/DEPENDENCIES
+. $origin/.core/TARGET
+. $origin/.core/ARGUMENTS
+. $origin/.core/PROJECTS
+. $origin/.core/UPDATER
 
 start () {
     #sudoreq

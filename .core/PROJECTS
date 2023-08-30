@@ -15,7 +15,7 @@ list_projects() {
     local project_index=1
     local found_projects=false
 
-    for project_dir in $origin/projects/*/; do
+    for project_dir in "$origin/projects/"*; do
         if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "$tmp_folder" ]; then
             project_name=$(basename "$project_dir")
             echo "  $project_index) $dim[PROJECT]$end $cyan2$project_name$end"
@@ -24,10 +24,13 @@ list_projects() {
         fi
     done
 
-    if [ "$found_projects" = false ] || [ ! -d "$origin/projects/$tmp_folder" ]; then
+    if [ "$found_projects" = false ] || [ -d "$origin/projects/$tmp_folder" ]; then
+        :
+    else
         echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
     fi
 }
+
 
 # Function to display the project menu
 projects_menu() {
