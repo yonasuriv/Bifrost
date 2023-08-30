@@ -31,4 +31,4 @@ list_guest_access_smb_share_select() {
         0) legend;;
         *) incorrect_selection_number ; menu_return ;;
     esac
-    
+    }
