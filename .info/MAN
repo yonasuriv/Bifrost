@@ -9,6 +9,7 @@ man () {
 
  -v             Check the Current Version
  -u             Update Bifrost Link
+ -fu            Force Update [Can Delete All Projects]
  -x             Install Bifrost Link Dependencies
 """
 }

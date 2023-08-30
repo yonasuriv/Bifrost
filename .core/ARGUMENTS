@@ -15,6 +15,9 @@ handle_arguments() {
                 print_version
                 exit 0
                 ;;
+            -D|-d|--debug)
+                start
+                ;;
             -U|-u|--update)
                 echo
                 update
