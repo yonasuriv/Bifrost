@@ -93,3 +93,6 @@ update () {
 }
 
 update
+
+# Remove the following line of code if not using Bifrost Link
+bifrost -u
