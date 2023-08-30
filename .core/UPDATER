@@ -65,7 +65,7 @@ update() {
         else
             echo " Local version $yellow2($local_version)$end is different from remote version $cyan2($remote_version)$end."
             echo 
-            echo " $dim Initializing Bifrost Link Updater..$end"
+            echo "$dim Initializing Bifrost Link Updater..$end"
             sleep 2
             echo
             update_start
