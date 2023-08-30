@@ -1,32 +1,33 @@
 #!/bin/sh
 
-# Core
-. $origin/.core/CONTROL
-. $origin/.core/SIGNAL
-. $origin/.core/DEPENDENCIES
-. $origin/.core/TARGET
-. $origin/.core/PROJECTS
-. $origin/.core/ARGUMENTS
-. $origin/.core/UPDATER
+omega="."
 
 # Assets
-. $origin/.assets/CSS
-. $origin/.assets/LOGO
+. $omega/.assets/CSS
+. $omega/.assets/LOGO
 
 # Menu
-. $origin/.menu/MAIN
-. $origin/.menu/NETSCAN
-. $origin/.menu/FIND-DCIP
-. $origin/.menu/ZONE-TRANSFER
-. $origin/.menu/LGA-SMB-SHARE
-. $origin/.menu/FIND-USER-LIST
-. $origin/.menu/POISONING
-. $origin/.menu/COERCE
-. $origin/.menu/LDAP-ENUM
+. $omega/.menu/MAIN
+. $omega/.menu/NETSCAN
+. $omega/.menu/FIND-DCIP
+. $omega/.menu/ZONE-TRANSFER
+. $omega/.menu/LGA-SMB-SHARE
+. $omega/.menu/FIND-USER-LIST
+. $omega/.menu/POISONING
+. $omega/.menu/COERCE
+. $omega/.menu/LDAP-ENUM
 
 # Info
 
-. $origin/.info/CREDITS
-. $origin/.info/LEGEND
-. $origin/.info/MAN
+. $omega/.info/CREDITS
+. $omega/.info/LEGEND
+. $omega/.info/MAN
 
+# Core
+. $omega/.core/CONTROL
+. $omega/.core/SIGNAL
+. $omega/.core/DEPENDENCIES
+. $omega/.core/TARGET
+. $omega/.core/PROJECTS
+. $omega/.core/ARGUMENTS
+. $omega/.core/UPDATER
