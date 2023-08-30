@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. $origin/.core/CONTROL
+
 print_version() {
     echo
     echo "$cyan2 Bifrost Link Version: $version$end"
@@ -17,7 +19,7 @@ tmp() {
     rm -r "./projects/$tmp_folder" > /dev/null 2>&1
     mkdir -p "./projects/$tmp_folder"
     cd "projects/$tmp_folder" #|| exit
-    cp "../../.core/TARGET-DUMMY" "../../projects/$tmp_folder/TARGET"
+    cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$tmp_folder/TARGET"
 }
 
 list_projects() {
@@ -78,7 +80,7 @@ projects_menu_select() {
         mkdir -p "projects/$project_name"
         cd "projects/$project_name" || exit
         echo "$end"
-        cp "../../.core/TARGET-DUMMY" "../../projects/$project_name/TARGET"
+        cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$project_name/TARGET"
         echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
         sleep 3
         target_prompt
@@ -158,7 +160,7 @@ handle_arguments() {
                     mkdir -p "projects/$project_name"
                     cd "projects/$project_name" || exit
                     echo "$green"
-                    cp "../../.core/TARGET-DUMMY" "../../projects/$project_name/TARGET"
+                    cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$project_name/TARGET"
                     echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
                     sleep 2
                     target_prompt

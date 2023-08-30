@@ -1,7 +1,5 @@
 #!/bin/sh
 
-origin=~/.local/share/Bifrost
-
 # Assets
 . $origin/.assets/CSS
 . $origin/.assets/LOGO
