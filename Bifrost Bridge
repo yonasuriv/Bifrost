@@ -10,8 +10,8 @@ build () {
     cp ./.core/SIGNAL $script_name
     chmod +x $script_name
     mkdir -p $exec_dir
-    mv $script_name $exec_dir
-    sudo ln -s $alpha/$script_name $omega/$script_name # Creates a Symbolic Link
+    mv -f$script_name $exec_dir
+    ln -s $alpha/$script_name $omega/$script_name # Creates a Symbolic Link
     chmod +x $exec_dir/$script_name
     rm -rf "$omega"
     mv -f "$alpha" "$omega"
