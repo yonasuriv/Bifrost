@@ -11,13 +11,18 @@ handle_arguments() {
 
     while [ $# -gt 0 ]; do
         case "$1" in
-            -V|-v|-version)
+            -V|-v|--version)
                 print_version
                 exit 0
                 ;;
-            -U|-u|-update)
+            -U|-u|--update)
                 echo
                 update
+                exit 0
+                ;;
+            -FU|-fu|--force-update)
+                echo
+                force_update
                 exit 0
                 ;;
             -P|-p)

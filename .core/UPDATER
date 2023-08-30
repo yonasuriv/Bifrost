@@ -41,9 +41,13 @@ print_version() {
     compare_versions "$local_version" "$remote_version"
 }
 
-update_start () {
+update_start() {
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
+}
+
+force_update() {
+    update_start
 }
 
 update() {
