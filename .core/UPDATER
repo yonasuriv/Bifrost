@@ -25,7 +25,7 @@ print_version() {
         if [ "$local_version" = "$remote_version" ]; then
             echo "$dim Bifrost Link Version: $version$end $yellow2[NEW UPDATES AVAILABLES$remote_version]$end"
         else
-            echo "$dim Bifrost Link Version: $version$end $green2[UP TO DATE$remote_version]$end"
+            echo "$dim Bifrost Link Version: $version$end $green2[UP TO DATE]$end"
         fi
     }
 
@@ -43,7 +43,7 @@ update_start () {
 
 update() {
     # Load the local version from the CONTROL file
-    local_version=$(grep -o 'version="[^"]*"' $origin/projects/bifrost/.core/CONTROL | sed 's/version="//;s/"//')
+    local_version=$(grep -o 'version="[^"]*"' $origin/.core/CONTROL | sed 's/version="//;s/"//')
 
     # Define the URL of the remote CONTROL file
     remote_url="https://raw.githubusercontent.com/yonasuriv/Bifrost/main/.core/CONTROL"
