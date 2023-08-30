@@ -8,13 +8,13 @@ print_version() {
     echo "$cyan2 Bifrost Link Version: $version$end"
     }
 
-update () {
+update_start () {
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
     echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
     }
 
-version_fetch() {
+update() {
     # Load the local version from the CONTROL file
     local_version=$(grep -o 'version="[^"]*"' /home/kali/.xfiles/projects/bifrost/.core/CONTROL | sed 's/version="//;s/"//')
 
@@ -41,7 +41,7 @@ version_fetch() {
             echo " Initializing Bifrost Link Updater.."
             sleep 2
             echo
-            update
+            update_start
         fi
     }
 
