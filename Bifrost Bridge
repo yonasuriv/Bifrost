@@ -7,12 +7,13 @@ build () {
     echo "\033[0;37m Building the $builder_name..\033[0m"
     echo
     sleep 2
-    cp ./.core/SIGNAL $script_name
+    cp ./.core/$script_alias $script_name
     chmod +x $script_name
     mkdir -p $exec_dir
-    mv -f$script_name $exec_dir
-    ln -s $alpha/$script_name $omega/$script_name # Creates a Symbolic Link
-    chmod +x $exec_dir/$script_name
+    #mv -f $script_name $exec_dir
+    ln -s $alpha/.core/$script_alias $omega/$script_name # Creates a Symbolic Link
+    ln -s ./.core/$script_alias $omega/$script_name # Creates a Symbolic Link
+    #chmod +x $exec_dir/$script_name
     rm -rf "$omega"
     mv -f "$alpha" "$omega"
 
