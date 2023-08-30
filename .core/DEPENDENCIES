@@ -117,7 +117,7 @@ dependencies() {
 
         # Print "All dependencies (x) installed successfully" at the end
         echo
-        echo "$green  All $green2($total_commands)$green dependencies were installed/updated successfully.$end"
+        echo "$green     All $green2($total_commands)$green dependencies were installed/updated successfully.$end"
         echo
     }
 
@@ -125,7 +125,7 @@ dependencies() {
     sudoreq
 
     # Ask for installation mode
-    printf "  Choose installation mode (normal/debug) $white[default=normal]$end: "
+    printf "     Choose installation mode (normal/debug) $white[default=normal]$end: "
     read -r mode
 
     # Set debug flag based on user's choice (default to normal)
@@ -139,7 +139,7 @@ dependencies() {
             selected_mode="Debug Mode"
             ;;
         *)
-            echo "Invalid mode. Choosing 'normal' as default."
+            echo "     Invalid mode. Choosing 'normal' as default."
             debug="false"
             selected_mode="Normal Mode"
             ;;
@@ -147,9 +147,9 @@ dependencies() {
 
     # Print the selected mode
     echo " $cyan"
-    echo "  [$selected_mode Selected]" | tr '[:lower:]' '[:upper:]$end'
+    echo "     [$selected_mode Selected]" | tr '[:lower:]' '[:upper:]$end'
     echo " $end"
-    echo " $dim Starting to Install Bifrost Dependencies...$end"
+    echo "    $dim Starting to Install Bifrost Dependencies...$end"
     sleep 2
 
     # Install packages and show progress
