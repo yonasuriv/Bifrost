@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Variables Required: name_server, guest
+# Variables Required: name_server, dc_ip, guest, guests?
 
 list_guest_access_smb_share() {
     echo "$negative List Guest Access on SMB Share $end"
@@ -8,8 +8,8 @@ list_guest_access_smb_share() {
     echo "  1)$command$dim  enum4linux -a -u "" -p "" <dc-ip> && enum4linux -a -u "guest" -p "" <dc-ip>$end"
     echo "  2)$command$dim  smbmap -u "" -p "" -P 445 -H <dc-ip> && smbmap -u "guest" -p "" -P 445 -H <dc-ip>$end"
     echo "  3)$command$dim  smbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip>$end"
-    echo "  4)$command$dim$crackmapexec cme smb <ip> -u '' -p '' # enumerate null session$end"
-    echo "  5)$command$dim$crackmapexec Enumerate Anonymous Accessme #smb <ip> -u 'a' -p '' # end"
+    echo "  4)$command$dim$crackmapexec cme smb $ip -u '' -p '' # enumerate null session$end"
+    echo "  5)$command$dim$crackmapexec Enumerate Anonymous Accessme # mbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip> # end"
     echo
     echo "  E) Exit$end"
     echo
@@ -22,15 +22,21 @@ list_guest_access_smb_share_select() {
     read selection
     echo "$dim"
     case $selection in
-        1) dig axfr $domain @$name_Server ; echo "$end"; menu_return ;;
-        [Ee]) credits;;
+        1) enum4linux -a -u "" -p "" $dc_ip && enum4linux -a -u "$guest" -p "" $dc_ip; echo "$end"; menu_return ;;
+        2) smbmap -u "" -p "" -P 445 -H $dc_ip && smbmap -u "$guest" -p "" -P 445 -H $dc_ip ; echo "$end"; menu_return ;;
+        3) smbclient -U '%' -L //<dc-ip> && smbclient -U "$guest%" -L //<dc-ip> @$name_Server ; echo "$end"; menu_return ;;
+        4) dig axfr $domain @$name_Server ; echo "$end"; menu_return ;;
+        5) cme smb <ip> -u 'a' -p ''
         0) legend;;
         *) incorrect_selection_number ; menu_return ;;
     esac
-    }
-
-
+    
 List guest access on smb share
 	
 	
-	c
+	cme smb <ip> -u 'a' -p '' # enumerate anonymous access
+
+    List guest access on smb share
+	enum4linux -a -u "" -p "" <dc-ip> && enum4linux -a -u "guest" -p "" <dc-ip>
+	smbmap -u "" -p "" -P 445 -H <dc-ip> && smbmap -u "guest" -p "" -P 445 -H <dc-ip>
+	smbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip>
