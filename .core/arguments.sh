@@ -134,6 +134,7 @@ handle_arguments() {
                 exit 0
                 ;;
             -U|-u|-update)
+                echo
                 update
                 print_version
                 exit 0
