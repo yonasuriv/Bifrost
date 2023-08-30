@@ -11,7 +11,6 @@ print_version() {
 update_start () {
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
-    echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
     }
 
 update() {
@@ -34,14 +33,15 @@ update() {
         remote_version="$2"
 
         if [ "$local_version" = "$remote_version" ]; then
-            echo "$green Local version ($local_version) is up to date.$end"
+            echo "$green Bifrost Link is currently in the last version ($local_version).$end"
         else
             echo " Local version $yellow2($local_version)$end is different from remote version $cyan2($remote_version)$end."
             echo 
-            echo " Initializing Bifrost Link Updater.."
+            echo " $dim Initializing Bifrost Link Updater..$end"
             sleep 2
             echo
             update_start
+            echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
         fi
     }
 
