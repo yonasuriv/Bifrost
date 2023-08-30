@@ -31,6 +31,7 @@ printf " Commit Message    : $yellow2" && read reason
 echo
 printf "$end Update Level $dim[3-1]$end: $cyan2" && read level
 printf "$end"
+echo
 #echo "$end"
 
 # Split the version into its three components
