@@ -6,7 +6,6 @@ print_version() {
 }
 
 update () {
-    echo
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
     echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
