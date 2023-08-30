@@ -27,7 +27,7 @@
 
 . $origin/.core/CONTROL
 
-bifrost_link() {
+start () {
     #sudoreq
     clear
     logo
