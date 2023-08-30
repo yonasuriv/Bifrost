@@ -2,13 +2,13 @@
 
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
-version="1.0.11"
+version="0.1.4"
 
 
 # Package Information:
 #
 # Package: The name of the package.
-# Version: 1The version number of the package.
+# Version: 111The version number of the package.
 # Architecture: The target architecture (e.g., amd64, i386, armhf).
 # Section: The package's section in the repository (e.g., main, contrib, non-free).
 # Priority: The package's priority (e.g., required, important, optional).
@@ -65,6 +65,6 @@ version="1.0.11"
 # Signatures: Package signatures and integrity checks (e.g., MD5Sum, SHA256).
 
 
-# Standards-Version: 1
+# Standards-Version: 111
 #
 # The version of the Debian Policy Manual adhered to by the package.
