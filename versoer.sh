@@ -30,6 +30,7 @@ current_version
 printf " Commit Message    : $yellow2" && read reason
 echo
 printf "$end Update Level $dim[3-1]$end: $cyan2" && read level
+printf "$end"
 #echo "$end"
 
 # Split the version into its three components
@@ -77,7 +78,7 @@ new_version="${third_level}.${second_level}.${first_level}"
 # Update the version in the control file
 sed -i "s/version=\"$version\"/version=\"$new_version\"/" "$control_file_path"
 
-echo "$end"
+
 
 # Commit changes to Git
 git add . && git commit -m "$reason" && git push > /dev/null 2>&1
