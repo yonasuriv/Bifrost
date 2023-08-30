@@ -8,7 +8,7 @@ zone_transfer() {
     echo "  E) Exit$end"
     echo
     echo -n "     Choose one of the above options: "
-    find_dc_ip_select
+    zone_transfer_select
     }
 
 
