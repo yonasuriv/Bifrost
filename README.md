@@ -17,7 +17,7 @@ Stable-Experimental: Bifrost Link is currently under Development.
 ```bash
 git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && 
 cd bifrost
-sh BuildBifrostBridge 
+sh LINK 
 cd - > /dev/null 2>&1
 ```
 
