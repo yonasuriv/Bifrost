@@ -23,7 +23,9 @@
 # Core
 . $origin/.core/DEPENDENCIES
 . $origin/.core/TARGET
-. $origin/.core/PROARGS
+. $origin/.core/ARGUMENTS
+. $origin/.core/PROJECT
+. $origin/.core/UPDATER
 
 . $origin/.core/CONTROL
 

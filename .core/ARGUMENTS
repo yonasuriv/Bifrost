@@ -1,0 +1,51 @@
+#!/bin/sh
+
+. $origin/.core/CONTROL
+
+# Function to handle command-line arguments
+handle_arguments() {
+    if [ $# -eq 0 ]; then
+        no_project
+        return
+    fi
+
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            -V|-v|-version)
+                print_version
+                exit 0
+                ;;
+            -U|-u|-update)
+                echo
+                update
+                print_version
+                exit 0
+                ;;
+            -P|-p)
+                shift  # Consume the -p flag
+                if [ $# -eq 0 ]; then
+                    projects_menu
+                fi
+                project_name="$1"
+                
+                # Check if the folder already exists
+                if [ -d "$origin/projects/$project_name" ]; then
+                project_found
+                else
+                project_create
+                fi
+                ;;
+            -X|-x)
+                echo
+                dependencies
+                exit 1
+                ;;
+            *)
+                echo
+                echo "Invalid argument. Use the $yellow2-h$end flag to see all the available commands."
+                exit 1
+                ;;
+        esac
+        shift
+    done
+}
