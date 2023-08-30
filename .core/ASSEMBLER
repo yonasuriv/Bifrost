@@ -1,7 +1,5 @@
 #!/bin/sh
 
-omega="."
-
 # Assets
 . $omega/.assets/CSS
 . $omega/.assets/LOGO
