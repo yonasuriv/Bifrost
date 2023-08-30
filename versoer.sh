@@ -11,12 +11,18 @@ yellow="\033[0;33m"
 yellow2="\033[1;33m"
 
 update () {
+    # User-Defined path for the GitHub Repository
+    repository_path=~/.xfiles/projects/bifrost
+
+    cd "$repository_path"
+
     # User-Defined path to the control file
-    control_file_path="CONTROL.sh"
+    control_file_path=~/.xfiles/projects/bifrost/.core/CONTROL
 
     # Check if the control file exists at the specified path
     if [ ! -f "$control_file_path" ]; then
-        echo "$red2 Control file not found at: $control_file_path$end"
+        echo
+        printf "$red2 Control file not found at: $control_file_path$end"
         exit 1
     fi
 
@@ -28,9 +34,9 @@ update () {
     echo ""
 
     # Ask for user input for REASON and level
-    printf " Commit Message     $yellow2" && read reason
+    printf " Commit Message       $yellow2" && read reason
     echo
-    printf "$end Update Level $dim[3-1]$end $yellow" && read level
+    printf "$end Update Level $dim[3-1]  $end $yellow" && read level
     printf "$end"
 
     # Split the version into its three components
