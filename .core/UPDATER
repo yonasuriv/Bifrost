@@ -4,8 +4,36 @@
 #. /home/kali/.xfiles/projects/bifrost/.core/CONTROL
 
 print_version() {
-    echo
-    echo "$cyan2 Bifrost Link Version: $version$end"
+    # Load the local version from the CONTROL file
+    local_version=$(grep -o 'version="[^"]*"' $origin/projects/bifrost/.core/CONTROL | sed 's/version="//;s/"//')
+
+    # Define the URL of the remote CONTROL file
+    remote_url="https://raw.githubusercontent.com/yonasuriv/Bifrost/main/.core/CONTROL"
+
+    # Function to fetch the remote version
+    get_remote_version() {
+        # Use curl to fetch the remote CONTROL file and extract the version value
+        remote_version=$(curl -s "$remote_url" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
+        echo "$remote_version"
+    }
+
+    # Compare the local and remote versions
+    compare_versions() {
+        local_version="$1"
+        remote_version="$2"
+
+        if [ "$local_version" = "$remote_version" ]; then
+            echo "$dim Bifrost Link Version: $version$end $yellow2[NEW UPDATES AVAILABLES$remote_version]$end"
+        else
+            echo "$dim Bifrost Link Version: $version$end $green2[UP TO DATE$remote_version]$end"
+        fi
+    }
+
+    # Fetch the remote version
+    remote_version=$(get_remote_version)
+
+    # Compare the versions
+    compare_versions "$local_version" "$remote_version"
     }
 
 update_start () {
