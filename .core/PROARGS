@@ -16,9 +16,9 @@ update () {
 tmp_folder="zzz_BifrostEphemeral.tmp"
 
 tmp() {
-    rm -r "./projects/$tmp_folder" > /dev/null 2>&1
-    mkdir -p "./projects/$tmp_folder"
-    cd "projects/$tmp_folder" #|| exit
+    rm -r "$origin/projects/$tmp_folder" > /dev/null 2>&1
+    mkdir -p "$origin/projects/$tmp_folder"
+    cd "$origin/projects/$tmp_folder" #|| exit
     cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$tmp_folder/TARGET"
 }
 
@@ -77,8 +77,8 @@ projects_menu_select() {
         start
     elif [ "$choice" = "n" ] || [ "$choice" = "N" ]; then
         echo -n "     Enter project name: $green" && read project_name
-        mkdir -p "projects/$project_name"
-        cd "projects/$project_name" || exit
+        mkdir -p "$origin/projects/$project_name"
+        cd "$origin/projects/$project_name" || exit
         echo "$end"
         cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$project_name/TARGET"
         echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
@@ -149,16 +149,16 @@ handle_arguments() {
                 project_name="$1"
                 
                 # Check if the folder already exists
-                if [ -d "projects/$project_name" ]; then
+                if [ -d "$origin/projects/$project_name" ]; then
                     echo
                     echo " $cyan2[PROJECT FOUND]$end Initializing $white$project_name$end."
                     sleep 3
-                    cd "projects/$project_name"
+                    cd "$origin/projects/$project_name"
                     target_prompt
                     start
                 else
-                    mkdir -p "projects/$project_name"
-                    cd "projects/$project_name" || exit
+                    mkdir -p "$origin/projects/$project_name"
+                    cd "$origin/projects/$project_name" || exit
                     echo "$green"
                     cp "$origin/.assets/TARGET-DUMMY" "$origin/projects/$project_name/TARGET"
                     echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
