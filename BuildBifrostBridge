@@ -1,6 +1,6 @@
 #!/bin/sh
 
-bridge='export PATH="$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
+bridge='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
 origin=~/.local/share/Bifrost
 location=$(pwd)
@@ -11,10 +11,11 @@ build () {
     echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
     echo
     sleep 2
-    cp Bifrost.c bifrost.sh
-    chmod +x bifrost.sh
+    cp Bifrost.c bifrost
+    chmod +x bifrost
     mkdir -p ~/.local/bin
     mv bifrost.sh ~/.local/bin
+    chmod +x ~/.local/bin/bifrost
     rm -rf "$origin"
     #mkdir $origin > /dev/null 2>&1
     #transfer
