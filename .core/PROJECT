@@ -16,7 +16,7 @@ list_projects() {
     for project_dir in $origin/projects/*/; do
         if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "$tmp_folder" ]; then
             project_name=$(basename "$project_dir")
-            echo "  $project_index) $dim[PROJECT]$end $green2$project_name$end"
+            echo "  $project_index) $dim[PROJECT]$end $cyan2$project_name$end"
             project_index=$((project_index + 1))
             found_projects=true
         fi
