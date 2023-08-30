@@ -1,0 +1,39 @@
+#!/bin/sh
+
+. ./.core/ASSEMBLER
+
+build () {
+    echo
+    echo "\033[0;37m Building the $builder_name..\033[0m"
+    echo
+    sleep 2
+    cp ./.core/SIGNAL $script_name
+    chmod +x $script_name
+    mkdir -p $exec_dir
+    mv $script_name $exec_dir
+    sudo ln -s $alpha/$script_name $omega/$script_name # Creates a Symbolic Link
+    chmod +x $exec_dir/$script_name
+    rm -rf "$omega"
+    mv -f "$alpha" "$omega"
+
+    # Check if the line already exists in ~/.bashrc and append it if not
+    if ! grep -qF "$export_path" ~/.bashrc; then
+        echo "$export_path" >> ~/.bashrc
+    fi
+
+    # Check if the line already exists in ~/.zshrc and append it if not
+    if ! grep -qF "$export_path" ~/.zshrc; then
+        echo "$export_path" >> ~/.zshrc
+    fi
+    
+    echo "\033[1;32m Operation Completed Successfully.\033[0m"
+    echo
+    echo " Now you can use the Bifrost Link simply by typing\033[1;36m $script_name\033[0m on your terminal."
+}
+
+# Build Bifrost Bridge
+build
+
+
+
+

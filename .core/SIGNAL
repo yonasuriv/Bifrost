@@ -1,10 +1,20 @@
 #!/bin/sh
 
-#cd ../share/Bifrost
-origin="." # Used for debugging only
-#origin=~/.local/share/Bifrost # Bifrost Path
-. $origin/.core/ASSEMBLER # Assemble 
+. ASSEMBLER
 
+start () {
+    #sudoreq
+    clear
+    logo
+    print_version
+    target_data
+    menu
+    menu_select
+}
+
+#cd ../share/Bifrost
+#origin="." # Used for debugging only
+#origin=~/.local/share/Bifrost # Bifrost Path
 
 handle_arguments "$@" # Pass all command-line arguments to the handle_arguments function
 start "$@" # Bifrost Link Start

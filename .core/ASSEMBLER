@@ -1,11 +1,8 @@
 #!/bin/sh
 
-origin="." # Used for debugging only
-#origin=~/.local/share/Bifrost # Bifrost Path
-#. $origin/.core/ASSEMBLER # Assemble 
-
 # Core
-#. $origin/.core/CONTROL
+. $origin/.core/CONTROL
+. $origin/.core/SIGNAL
 . $origin/.core/DEPENDENCIES
 . $origin/.core/TARGET
 . $origin/.core/PROJECTS
@@ -32,14 +29,4 @@ origin="." # Used for debugging only
 . $origin/.info/CREDITS
 . $origin/.info/LEGEND
 . $origin/.info/MAN
-. $origin/.core/CONTROL
 
-start () {
-    #sudoreq
-    clear
-    logo
-    print_version
-    target_data
-    menu
-    menu_select
-}
