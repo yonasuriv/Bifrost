@@ -33,6 +33,7 @@ start () {
     #sudoreq
     clear
     logo
+    print_version
     target_data
     menu
     menu_select
