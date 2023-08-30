@@ -62,7 +62,7 @@ dependencies() {
         space=$(printf "%0.s " $(seq 1 "$((width - current))"))
 
         # Print the progress bar
-        printf "\r  [ %s%s] %d%%" "$bar" "$space" "$progress"
+        printf "\r     [ %s%s] %d%%" "$bar" "$space" "$progress"
     }
 
     # Function to install packages and update progress
@@ -74,7 +74,7 @@ dependencies() {
         echo "$command" | tr ',' '\n' | while IFS=: read -r package_name install_name; do
             # Print the description
             echo
-            echo "$cyan2  Setting up $package_name$end"
+            echo "$cyan2     Setting up $package_name$end"
             echo
 
             if [ "$debug" = "true" ]; then
