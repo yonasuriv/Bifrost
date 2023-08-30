@@ -39,8 +39,7 @@ handle_arguments() {
                 dependencies
                 exit 1
                 ;;
-            -H|-h)
-                echo
+            -H|-h|-M|-h)
                 man
                 exit 1
                 ;;

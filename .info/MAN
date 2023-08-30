@@ -1,6 +1,7 @@
 #!/bin/sh
 
 man () {
+    echo"""
  All of the arguments are case insensitive.
 
  -p             Opens the Projects Menu
@@ -9,5 +10,5 @@ man () {
  -v             Check the Current Version
  -u             Update Bifrost Link
  -x             Install Bifrost Link Dependencies
- 
+"""
 }
