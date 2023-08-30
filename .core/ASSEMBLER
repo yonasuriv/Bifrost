@@ -43,11 +43,11 @@ test333() {
 . ./.menu/MAIN
 . ./.menu/NETSCAN
 . ./.menu/FIND-DCIP
-. /.menu/ZONE-TRANSFER
-. /.menu/LGA-SMB-SHARE
-. /.menu/FIND-USER-LIST
-. /.menu/POISONING
-. /.menu/COERCE
+. ./.menu/ZONE-TRANSFER
+. ./.menu/LGA-SMB-SHARE
+. ./.menu/FIND-USER-LIST
+. ./.menu/POISONING
+. ./.menu/COERCE
 . ./.menu/LDAP-ENUM
 
 # Info
