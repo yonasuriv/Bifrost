@@ -14,7 +14,7 @@ build () {
     cp Bifrost.c bifrost
     chmod +x bifrost
     mkdir -p ~/.local/bin
-    mv bifrost.sh ~/.local/bin
+    mv bifrost ~/.local/bin
     chmod +x ~/.local/bin/bifrost
     rm -rf "$origin"
     #mkdir $origin > /dev/null 2>&1

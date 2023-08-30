@@ -1,7 +1,6 @@
 #!/bin/sh
 
-#origin=~/.local/share/Bifrost
-origin="."
+origin=~/.local/share/Bifrost
 
 # Assets
 . $origin/.assets/CSS
