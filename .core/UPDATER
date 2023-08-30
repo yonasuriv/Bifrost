@@ -15,7 +15,7 @@ print_version() {
         # Use curl to fetch the remote CONTROL file and extract the version value
         remote_version=$(curl -s "$remote_url" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
         echo "$remote_version"
-        }
+    }
 
     # Compare the local and remote versions
     compare_versions() {
@@ -25,23 +25,26 @@ print_version() {
         if [ "$local_version" = "$remote_version" ]; then
             echo
             echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"
+        elif [ "$local_version" \> "$remote_version" ]; then # This is due to the cache timing to curl from github
+            echo
+            echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"
         else
             echo
-            echo "$dim Bifrost Link Version: $local_version$end $yellow2[NEW UPDATES AVAILABLES $remote_version]$end"
+            echo "$dim Bifrost Link Version: $local_version$end $yellow2[NEW UPDATES AVAILABLE $remote_version]$end"
         fi
-        }
+    }
 
     # Fetch the remote version
     remote_version=$(get_remote_version)
 
     # Compare the versions
     compare_versions "$local_version" "$remote_version"
-    }
+}
 
 update_start () {
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
-    }
+}
 
 update() {
     # Load the local version from the CONTROL file
@@ -63,6 +66,8 @@ update() {
         remote_version="$2"
 
         if [ "$local_version" = "$remote_version" ]; then
+            echo "$green Bifrost Link is currently in the last version ($local_version).$end"
+        elif [ "$local_version" \> "$remote_version" ]; then # This is due to the cache timing to curl from github
             echo "$green Bifrost Link is currently in the last version ($local_version).$end"
         else
             echo " Local version $yellow2($local_version)$end is different from remote version $cyan2($remote_version)$end."
