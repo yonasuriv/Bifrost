@@ -70,13 +70,13 @@ update() {
         elif [ "$local_version" \> "$remote_version" ]; then # This is due to the cache timing to curl from github
             echo "$green Bifrost Link is currently in the last version ($local_version).$end"
         else
-            echo " Local version $yellow2($local_version)$end is different from remote version $cyan2($remote_version)$end."
+            echo " Local version $cyan2($local_version)$end is different from remote version $yellow2($remote_version)$end."
             echo 
             echo "$dim Initializing Bifrost Link Updater..$end"
             sleep 2
             echo
             update_start
-            echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
+            echo "$green2 Bifrost Link successfully updated to the last version. $end"
         fi
         }
 
