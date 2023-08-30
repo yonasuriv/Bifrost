@@ -22,7 +22,7 @@ list_projects() {
         fi
     done
 
-    if [ "$found_projects" = false ]|| [ ! -d "$originprojects/$tmp_folder" ]; then
+    if [ "$found_projects" = false ]|| [ ! -d "$origin/projects/$tmp_folder" ]; then
         echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
     fi
 }
