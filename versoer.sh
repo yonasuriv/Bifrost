@@ -7,6 +7,7 @@ white="\033[0;37m"
 green2="\033[1;32m"
 red2="\033[1;31m"
 cyan2="\033[1;36m"
+yellow="\033[0;33m"
 yellow2="\033[1;33m"
 
 update () {
@@ -23,13 +24,13 @@ update () {
     version=$(grep 'version=' "$control_file_path" | awk -F '"' '{print $2}')
 
     echo
-    echo " Bifrost Link version $version"
-    echo
+    printf " Bifrost Link version $green2$version$end" && echo
+    echo ""
 
     # Ask for user input for REASON and level
-    printf " Commit Message    : $yellow2" && read reason
+    printf " Commit Message     $yellow2" && read reason
     echo
-    printf "$end Update Level $dim[3-1]$end: $cyan2" && read level
+    printf "$end Update Level $dim[3-1]$end $yellow" && read level
     printf "$end"
     echo
     #echo "$end"
@@ -80,11 +81,11 @@ update () {
     sed -i "s/version=\"$version\"/version=\"$new_version\"/" "$control_file_path"
 
     # Commit changes to Git
-    git add . | sed 's/^/  /' #&& 
-    git commit -m "$reason" | sed 's/^/  /' #&& 
+    git add . | sed 's/^/ /'
+    echo
+    git commit -m "$reason" | sed 's/^/ /' 
+    echo
     git push | sed 's/^/  /' #> /dev/null 2>&1
 }
 
 update
-echo
-echo $version

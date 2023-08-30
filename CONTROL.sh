@@ -2,7 +2,7 @@
 
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
-version="0.1.9"
+version="1.0.0"
 
 
 # Package Information:
