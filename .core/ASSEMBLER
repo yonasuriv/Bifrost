@@ -1,0 +1,40 @@
+#!/bin/sh
+
+#origin=~/.local/share/Bifrost
+origin="."
+
+# Assets
+. $origin/.assets/CSS
+. $origin/.assets/LOGO
+
+# Menu
+. $origin/.menu/MAIN
+. $origin/.menu/NETSCAN
+. $origin/.menu/FIND-DCIP
+. $origin/.menu/ZONE-TRANSFER
+. $origin/.menu/LGA-SMB-SHARE
+. $origin/.menu/FIND-USER-LIST
+. $origin/.menu/POISONING
+. $origin/.menu/COERCE
+. $origin/.menu/LDAP-ENUM
+
+# Info
+
+. $origin/.info/CREDITS
+. $origin/.info/LEGEND
+
+# Core
+. $origin/.core/DEPENDENCIES
+. $origin/.core/TARGET
+. $origin/.core/PROARGS
+
+. $origin/.core/CONTROL
+
+bifrost_link() {
+    #sudoreq
+    clear
+    logo
+    target_data
+    menu
+    menu_select
+}

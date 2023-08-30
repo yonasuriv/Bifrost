@@ -11,3 +11,5 @@ ip="$target_domain"
 ip_range="$target_domain"
 
 target="$target_domain"
+
+target_domain="$url"

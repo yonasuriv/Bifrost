@@ -17,7 +17,7 @@ tmp() {
     rm -r "./projects/$tmp_folder" > /dev/null 2>&1
     mkdir -p "./projects/$tmp_folder"
     cd "projects/$tmp_folder" #|| exit
-    cp "../../.core/create_target.sh" "../../projects/$tmp_folder/TARGET"
+    cp "../../.core/TARGET-DUMMY" "../../projects/$tmp_folder/TARGET"
 }
 
 list_projects() {
@@ -78,7 +78,7 @@ projects_menu_select() {
         mkdir -p "projects/$project_name"
         cd "projects/$project_name" || exit
         echo "$end"
-        cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
+        cp "../../.core/TARGET-DUMMY" "../../projects/$project_name/TARGET"
         echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
         sleep 3
         target_prompt
@@ -158,7 +158,7 @@ handle_arguments() {
                     mkdir -p "projects/$project_name"
                     cd "projects/$project_name" || exit
                     echo "$green"
-                    cp "../../.core/create_target.sh" "../../projects/$project_name/TARGET"
+                    cp "../../.core/TARGET-DUMMY" "../../projects/$project_name/TARGET"
                     echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
                     sleep 2
                     target_prompt
