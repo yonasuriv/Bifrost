@@ -100,7 +100,7 @@ projects_menu_select() {
             done
             echo " $cyan2[PROJECT FOUND]$end Initializing $white$selected_folder$end."
             sleep 3
-            cd "projects/$selected_folder"
+            cd "$origin/projects/$selected_folder"
             target_prompt
             start
         else
