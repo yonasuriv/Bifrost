@@ -95,4 +95,4 @@ commit () {
 commit
 
 # Remove the following line of code if not using Bifrost Link
-#bifrost -u
+bifrost -u
