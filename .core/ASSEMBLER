@@ -58,7 +58,6 @@ test333() {
 
 # Core
 . ./.core/CONTROL
-. ./.core/SIGNAL
 . ./.core/DEPENDENCIES
 . ./.core/TARGET
 . ./.core/PROJECTS
