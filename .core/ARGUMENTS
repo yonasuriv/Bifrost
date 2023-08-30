@@ -18,7 +18,6 @@ handle_arguments() {
             -U|-u|-update)
                 echo
                 update
-                print_version
                 exit 0
                 ;;
             -P|-p)
