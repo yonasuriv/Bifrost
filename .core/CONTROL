@@ -2,7 +2,7 @@
 
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
-version="1.3.0"
+version="1.3.1"
 
 script_name="bifrost" # Script Name
 package_folder="Bifrost" # Folder Containing all the files
