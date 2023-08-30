@@ -29,7 +29,7 @@ menu () {
     echo "  7)$dim Poisoning $end"
     echo "  8)$dim Coerce $end"
     echo
-    echo "  0) Exit"
+    echo "  E) Exit"
     echo
     echo "  L) Show Legend"
     echo "  X) Install Dependencies"
@@ -50,7 +50,7 @@ menu_select  () {
     6) udev;;
     7) udev;;
     8) udev;;
-    0) credits; exit;;
+    [Ee]) credits; exit;;
     [Ll]) legend;;
     [Xx]) dependencies; menu_return;;
     *) error_menu ; menu_return;;
