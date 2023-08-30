@@ -118,6 +118,7 @@ commit () {
     sed -i "s/version=\"$version\"/version=\"$new_version\"/" "$control_file_path"
 
     # Commit changes to Git
+    echo
     git add . | sed 's/^/ /'
     echo
     git commit -m "$reason" | sed 's/^/ /' 
