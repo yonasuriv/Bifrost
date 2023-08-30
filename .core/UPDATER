@@ -1,7 +1,7 @@
 #!/bin/sh
 
 . $origin/.core/CONTROL
-#. /home/kali/.xfiles/projects/bifrost/.core/CONTROL
+#. /home/kali/.xfiles/projects/bifrost/.core/CONTROL 
 
 print_version() {
     # Load the local version from the CONTROL file
@@ -24,7 +24,7 @@ print_version() {
 
         if [ "$local_version" = "$remote_version" ]; then
             echo
-            echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"          
+            echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"
         else
             echo
             echo "$dim Bifrost Link Version: $local_version$end $yellow2[NEW UPDATES AVAILABLES $remote_version]$end"

@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Core
+. $origin/.core/CONTROL
+. $origin/.core/DEPENDENCIES
+. $origin/.core/TARGET
+. $origin/.core/ARGUMENTS
+. $origin/.core/PROJECT
+. $origin/.core/UPDATER
+
 # Assets
 . $origin/.assets/CSS
 . $origin/.assets/LOGO
@@ -19,15 +27,6 @@
 
 . $origin/.info/CREDITS
 . $origin/.info/LEGEND
-
-# Core
-. $origin/.core/DEPENDENCIES
-. $origin/.core/TARGET
-. $origin/.core/ARGUMENTS
-. $origin/.core/PROJECT
-. $origin/.core/UPDATER
-
-. $origin/.core/CONTROL
 
 start () {
     #sudoreq
