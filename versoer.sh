@@ -79,9 +79,7 @@ new_version="${third_level}.${second_level}.${first_level}"
 # Update the version in the control file
 sed -i "s/version=\"$version\"/version=\"$new_version\"/" "$control_file_path"
 
-
-
 # Commit changes to Git
-git add . && git commit -m "$reason" && git push > /dev/null 2>&1
-
-echo $version
+git add . | sed 's/^/  /' #&& 
+git commit -m "$reason" | sed 's/^/  /' #&& 
+git push | sed 's/^/  /' #> /dev/null 2>&1
