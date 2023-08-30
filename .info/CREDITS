@@ -4,6 +4,7 @@ credits () {
     #clear
     #echo 
     echo "     Bifrost Bridge with$red ❤$end by $dev —$dim $site $end"
+    exit 0
     }
 
 credits_info () {
