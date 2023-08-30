@@ -12,7 +12,7 @@ build () {
     echo
     sleep 2
     cp Bifrost.c bifrost.sh
-    chmod +x bifrost
+    chmod +x bifrost.sh
     mkdir -p ~/.local/bin
     mv bifrost.sh ~/.local/bin
     rm -rf "$origin"
