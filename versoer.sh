@@ -32,8 +32,6 @@ update () {
     echo
     printf "$end Update Level $dim[3-1]$end $yellow" && read level
     printf "$end"
-    echo
-    #echo "$end"
 
     # Split the version into its three components
     IFS='.' read -ra version_parts <<< "$version"
