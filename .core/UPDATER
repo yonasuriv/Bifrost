@@ -13,7 +13,7 @@ print_version() {
     # Function to fetch the remote version
     get_remote_version() {
         # Use curl to fetch the remote CONTROL file and extract the version value
-        remote_version=$(curl -s "$remote_url$(date +%N)" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
+        remote_version=$(curl -s "$remote_url" | grep -o 'version="[^"]*"' | sed 's/version="//;s/"//')
         echo "$remote_version"
         }
 
