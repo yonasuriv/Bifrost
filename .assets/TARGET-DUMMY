@@ -5,10 +5,19 @@ target_domain="" # 127.0.0.1
 target_username="" # admin
 target_password="" # root
 
-# Modification below here is not recommended.
-# Only do it if you know what you're doing, otherwise it might break something.
+# Modification below here is not recommended. Only do it if you know what you're doing, otherwise it might break something.
 url="$target_domain"
 target="$target_domain"
 
 ip="$target_domain"
 ip_range="$target_domain"
+
+# Name Servers
+name_server=""
+
+#######
+# Debug
+#
+# domain=""
+# username=""
+# password=""

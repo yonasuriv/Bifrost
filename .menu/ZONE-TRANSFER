@@ -1,1 +1,26 @@
 #!/bin/sh
+
+#!/bin/sh
+
+zone_transfer() {
+    echo "$negative Zone Transfer $end"
+    echo
+    echo "  1) $command$dim dig axfr <domain_name> @<name_server>$end"
+    echo
+    echo "  E) Exit$end"
+    echo
+    echo -n "     Choose one of the above options: "
+    find_dc_ip_select
+    }
+
+
+zone_transfer_select() {
+    read selection
+    echo "$dim"
+    case $selection in
+        1) dig axfr $domain @$name_Server ; echo "$end"; menu_return ;;
+        [Ee]) credits;;
+        0) legend;;
+        *) incorrect_selection_number ; menu_return ;;
+    esac
+    }
