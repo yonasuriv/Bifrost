@@ -24,8 +24,7 @@ print_version() {
 
         if [ "$local_version" = "$remote_version" ]; then
             echo
-            echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"
-            echo $remote_version            
+            echo "$dim Bifrost Link Version: $local_version$end $green2[UP TO DATE]$end"          
         else
             echo
             echo "$dim Bifrost Link Version: $local_version$end $yellow2[NEW UPDATES AVAILABLES $remote_version]$end"
