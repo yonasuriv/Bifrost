@@ -5,7 +5,7 @@
 . $origin/.core/DEPENDENCIES
 . $origin/.core/TARGET
 . $origin/.core/ARGUMENTS
-. $origin/.core/PROJECT
+. $origin/.core/PROJECTS
 . $origin/.core/UPDATER
 
 # Assets
