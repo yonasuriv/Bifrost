@@ -1,7 +1,7 @@
 #!/bin/sh
 
 . $origin/.core/CONTROL
-#. /home/kali/.xfiles/projects/bifrost/.core/CONTROL 
+#. /home/kali/.xfiles/projects/bifrost/.core/CONTROL
 
 print_version() {
     # Load the local version from the CONTROL file
