@@ -1,1 +1,36 @@
 #!/bin/sh
+
+# Variables Required: name_server, guest
+
+list_guest_access_smb_share() {
+    echo "$negative List Guest Access on SMB Share $end"
+    echo
+    echo "  1)$command$dim  enum4linux -a -u "" -p "" <dc-ip> && enum4linux -a -u "guest" -p "" <dc-ip>$end"
+    echo "  2)$command$dim  smbmap -u "" -p "" -P 445 -H <dc-ip> && smbmap -u "guest" -p "" -P 445 -H <dc-ip>$end"
+    echo "  3)$command$dim  smbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip>$end"
+    echo "  4)$command$dim$crackmapexec cme smb <ip> -u '' -p '' # enumerate null session$end"
+    echo "  5)$command$dim$crackmapexec Enumerate Anonymous Accessme #smb <ip> -u 'a' -p '' # end"
+    echo
+    echo "  E) Exit$end"
+    echo
+    echo -n "     Choose one of the above options: "
+    find_dc_ip_select
+    }
+
+
+list_guest_access_smb_share_select() {
+    read selection
+    echo "$dim"
+    case $selection in
+        1) dig axfr $domain @$name_Server ; echo "$end"; menu_return ;;
+        [Ee]) credits;;
+        0) legend;;
+        *) incorrect_selection_number ; menu_return ;;
+    esac
+    }
+
+
+List guest access on smb share
+	
+	
+	c

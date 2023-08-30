@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#!/bin/sh
-
 zone_transfer() {
     echo "$negative Zone Transfer $end"
     echo
