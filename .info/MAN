@@ -1,15 +1,15 @@
 #!/bin/sh
 
-man () {
-    echo"""
- All of the arguments are case insensitive.
+man() {
+    echo """
+    All of the arguments are case insensitive.
 
- -p             Opens the Projects Menu
- -p <NAME>      Create a New Project
+    -p             Opens the Projects Menu
+    -p <NAME>      Create a New Project
 
- -v             Check the Current Version
- -u             Update Bifrost Link
- -fu            Force Update [Can Delete All Projects]
- -x             Install Bifrost Link Dependencies
-"""
+    -v             Check the Current Version
+    -u             Update Bifrost Link
+    -fu            Force Update [Can Delete All Projects]
+    -x             Install Bifrost Link Dependencies
+    """
 }
