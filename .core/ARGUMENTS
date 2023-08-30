@@ -1,7 +1,5 @@
 #!/bin/sh
 
-#. $origin/.core/CONTROL
-
 # Function to handle command-line arguments
 handle_arguments() {
     if [ $# -eq 0 ]; then
@@ -11,24 +9,16 @@ handle_arguments() {
 
     while [ $# -gt 0 ]; do
         case "$1" in
-            -V|-v|--version)
-                print_version
-                exit 0
+            -m|-h)
+                man
+                exit 1
                 ;;
-            -D|-d|--debug)
-                start
-                ;;
-            -U|-u|--update)
+            --x)
                 echo
-                update
-                exit 0
+                dependencies
+                exit 1
                 ;;
-            -FU|-fu|--force-update)
-                echo
-                force_update
-                exit 0
-                ;;
-            -P|-p)
+            -p|--project)
                 shift  # Consume the -p flag
                 if [ $# -eq 0 ]; then
                     projects_menu
@@ -42,14 +32,22 @@ handle_arguments() {
                     project_create
                 fi
                 ;;
-            -X|-x)
-                echo
-                dependencies
-                exit 1
+            -d|--debug)
+                start
                 ;;
-            -H|-h|-M|-h)
-                man
-                exit 1
+            -v|--version)
+                print_version
+                exit 0
+                ;;
+            -u|--update)
+                echo
+                update
+                exit 0
+                ;;
+            -U|--force-update)
+                echo
+                force_update
+                exit 0
                 ;;
             *)
                 echo

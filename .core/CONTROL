@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# [CUSTOM]
+
 dev="Jonathan Di Rico"
 site="https://www.yonasuriv.com/"
 version="1.3.14"
@@ -14,67 +16,109 @@ omega=~/.local/share/$package_folder # Final Directory Destination of the Packag
 
 export_path='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
+# [PACKAGE INFORMATION]
 
-# Package Information:
-#
-# Package: The name of the package.
-# Version: The version number of the package.
-# Architecture: The target architecture (e.g., amd64, i386, armhf).
-# Section: The package's section in the repository (e.g., main, contrib, non-free).
-# Priority: The package's priority (e.g., required, important, optional).
-# Essential: Indicates whether the package is essential for the system.
-
-
-# Maintainer Information:
-#
-# Maintainer: The name and email address of the package maintainer.
-# Uploaders: Additional contributors or maintainers.
-# Changed-By: Information about the person who made the last change.
+# The name of the package.
+package_name=''           
+# The version number of the package.
+package_version=''        
+# The target architecture (e.g., amd64, i386, armhf).
+package_architecture=''   
+# The package's section in the repository (e.g., main, contrib, non-free).
+package_section=''        
+# The package's priority (e.g., required, important, optional).
+package_priority=''       
+# Indicates whether the package is essential for the system.
+package_essential=''      
 
 
-# Package Description:
-# 
-# Description: A short description of the package.
-# Long-Description: A more detailed description of the package.
-# Homepage: The URL of the package's homepage or documentation.
+
+# [MAINTAINER INFORMATION]
+
+# The name and email address of the package maintainer.
+maintainer_name=''         
+# Additional contributors or maintainers.
+maintainer_uploaders=''    
+# Information about the person who made the last change.
+maintainer_changed_by=''   
 
 
-# Dependencies:
-# 
-# Depends: Packages that this package depends on.
-# Pre-Depends: Packages that must be installed before this package.
-# Recommends, Suggests, Enhances, Breaks: Additional dependency-related fields indicating package relationships.
+
+# [PACKAGE DESCRIPTION]
+
+# A short description of the package.
+package_description=''     
+# A more detailed description of the package.
+package_long_description='' 
+# The URL of the package's homepage or documentation.
+package_homepage=''        
 
 
-# Files and Permissions:
-#
-# Conffiles: Configuration files managed by the package.
-# Config: Configuration options for the package.
-# Conflicts: Packages that conflict with this package.
-# Provides: Virtual packages provided by this package.
+
+# [DEPENDENCIES]
+
+# Packages that this package depends on.
+depends=''                 
+# Packages that must be installed before this package.
+pre_depends=''             
+# Additional packages recommended by this package.
+recommends=''              
+# Additional packages suggested by this package.
+suggests=''                
+# Additional packages that enhance this package.
+enhances=''                
+# Packages that conflict with this package.
+breaks=''                  
+# Virtual packages provided by this package.
+provides=''                
 
 
-# Scripts:
-#
-# Pre-Inst, Post-Inst, Pre-Rm, Post-Rm: Scripts to run before/after package installation or removal.
+
+# [FILES AND PERMISSIONS]
+
+# Configuration files managed by the package.
+conffiles=''               
+# Configuration options for the package.
+config=''                  
+# Packages that conflict with this package.
+conflicts=''               
 
 
-# Built-Using: 
-#
+
+# [SCRIPTS]
+
+# Script to run before package installation.
+pre_inst=''                
+# Script to run after package installation.
+post_inst=''               
+# Script to run before package removal.
+pre_rm=''                  
+# Script to run after package removal.
+post_rm=''                 
+
+          
+
+# [SOURCE PACKAGE INFORMATION]
+
 # Information about the tools used to build the package.
+built_using=''   
+# The name of the source package.
+source_package=''          
+# Build-time dependencies for source packages.
+build_depends=''           
+# Independent build-time dependencies for source packages.
+build_depends_indep=''     
 
 
-# Source Package Information (for source packages):
-#
-# Source: The name of the source package.
-# Build-Depends, Build-Depends-Indep: Build-time dependencies for source packages.
+
+# [PACKAGE SIGNING]
+
+# Package signatures and integrity checks (e.g., MD5Sum, SHA256).
+signatures=''              
 
 
-# Package Signing:
-#
-# Signatures: Package signatures and integrity checks (e.g., MD5Sum, SHA256).
 
+# [STANDARDS-VERSION]
 
-# Standards-Version: 
-#
 # The version of the Debian Policy Manual adhered to by the package.
+standards_version=''       

@@ -4,12 +4,15 @@ man() {
     echo """
     All of the arguments are case insensitive.
 
-    -p             Opens the Projects Menu
-    -p <NAME>      Create a New Project
+    -x                           Install Bifrost Link Dependencies
+    -p|--project                 Opens the Projects Menu
+    -p| <PROJECT NAME>           Create a New Project
 
-    -v             Check the Current Version
-    -u             Update Bifrost Link
-    -fu            Force Update [Can Delete All Projects]
-    -x             Install Bifrost Link Dependencies
+    -d|--debug                   Enter Debugging Mode
+
+    -v|--version                 Check the Current Version
+    -u|--update                  Update Bifrost Link
+    -U|--force-update            Force Update [Can Delete All Projects]
+    
     """
 }
