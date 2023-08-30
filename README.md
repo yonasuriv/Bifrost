@@ -13,7 +13,7 @@ Depending on the interactions between services and source or destination of traf
 Stable-Experimental: Bifrost Link is currently under Development.
 
 ## Installation
-* ```git clone https://github.com/yonasuriv/bifrost.git && cd bifrost && sh BuildBifrostBridge```
+* ```git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge && cd -```
 
 ## Run
 Simply run the command ```bifrost```<br>
