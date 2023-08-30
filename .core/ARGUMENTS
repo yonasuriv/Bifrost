@@ -37,9 +37,9 @@ handle_arguments() {
                 
                 # Check if the folder already exists
                 if [ -d "$origin/projects/$project_name" ]; then
-                project_found
+                    project_found
                 else
-                project_create
+                    project_create
                 fi
                 ;;
             -X|-x)
