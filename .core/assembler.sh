@@ -1,29 +1,31 @@
 #!/bin/sh
 
+origin=~/.local/share/Bifrost
+
 # Styles
-. ./.assets/style.sh
+. $origin/.assets/style.sh
 
 # Menu
-. ./.menu/main.sh
-. ./.menu/network-scan.sh
-. ./.menu/find-dc-ip.sh
-. ./.menu/zone-transfer.sh
-. ./.menu/list-guest-access-smb-share.sh
-. ./.menu/find-user-list.sh
-. ./.menu/poisoning.sh
-. ./.menu/coerce.sh
+. $origin/.menu/main.sh
+. $origin/.menu/network-scan.sh
+. $origin/.menu/find-dc-ip.sh
+. $origin/.menu/zone-transfer.sh
+. $origin/.menu/list-guest-access-smb-share.sh
+. $origin/.menu/find-user-list.sh
+. $origin/.menu/poisoning.sh
+. $origin/.menu/coerce.sh
 
 # Info
-. ./.info/logo.sh
-. ./.info/credits.sh
-. ./.info/legend.sh
+. $origin/.info/logo.sh
+. $origin/.info/credits.sh
+. $origin/.info/legend.sh
 
 # Core
-. ./.core/dependencies.sh
-. ./.core/target.sh
-. ./.core/arguments.sh
+. $origin/.core/dependencies.sh
+. $origin/.core/target.sh
+. $origin/.core/arguments.sh
 
-. ./.core/CONTROL
+. $origin/.core/CONTROL
 
 bifrost_link() {
     #sudoreq
