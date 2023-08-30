@@ -47,7 +47,7 @@ The most basic way to show your support is to  **Star** ⭐ the project or to **
 You can also support this project by suggesting any _change/update/upgrade/feature_ 🙏
 
 ## Authors
-* **Jonathan Di Rico** - **WithSecure** (F-Secure) Cyber Defence Service
+* **Jonathan Di Rico* - **WithSecure** (F-Secure) Cyber Defence Service
 
 ## Documentation
 
