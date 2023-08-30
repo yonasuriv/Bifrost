@@ -39,9 +39,14 @@ handle_arguments() {
                 dependencies
                 exit 1
                 ;;
+            -H|-h)
+                echo
+                man
+                exit 1
+                ;;
             *)
                 echo
-                echo "Invalid argument. Use the $yellow2-h$end flag to see all the available commands."
+                echo "Invalid argument. Use the $yellow2-H$end or $yellow2-M$endflag to see all the available commands."
                 exit 1
                 ;;
         esac

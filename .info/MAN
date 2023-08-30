@@ -1,5 +1,13 @@
 #!/bin/sh
 
 man () {
-	
+ All of the arguments are case insensitive.
+
+ -p             Opens the Projects Menu
+ -p <NAME>      Create a New Project
+
+ -v             Check the Current Version
+ -u             Update Bifrost Link
+ -x             Install Bifrost Link Dependencies
+ 
 }

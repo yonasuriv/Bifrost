@@ -27,6 +27,7 @@
 
 . $origin/.info/CREDITS
 . $origin/.info/LEGEND
+. $origin/.info/MAN
 
 start () {
     #sudoreq
