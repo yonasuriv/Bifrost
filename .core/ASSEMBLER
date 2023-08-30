@@ -1,31 +1,66 @@
 #!/bin/sh
 
+test333() {
+
+    $omega="."
+
+    # Assets
+    . $omega/.assets/CSS
+    . $omega/.assets/LOGO
+
+    # Menu
+    . $omega/.menu/MAIN
+    . $omega/.menu/NETSCAN
+    . $omega/.menu/FIND-DCIP
+    . $omega/.menu/ZONE-TRANSFER
+    . $omega/.menu/LGA-SMB-SHARE
+    . $omega/.menu/FIND-USER-LIST
+    . $omega/.menu/POISONING
+    . $omega/.menu/COERCE
+    . $omega/.menu/LDAP-ENUM
+
+    # Info
+
+    . $omega/.info/CREDITS
+    . $omega/.info/LEGEND
+    . $omega/.info/MAN
+
+    # Core
+    . $omega/.core/CONTROL
+    . $omega/.core/SIGNAL
+    . $omega/.core/DEPENDENCIES
+    . $omega/.core/TARGET
+    . $omega/.core/PROJECTS
+    . $omega/.core/ARGUMENTS
+    . $omega/.core/UPDATER
+}
+
 # Assets
-. $omega/.assets/CSS
-. $omega/.assets/LOGO
+. ./.assets/CSS
+. ./.assets/LOGO
 
 # Menu
-. $omega/.menu/MAIN
-. $omega/.menu/NETSCAN
-. $omega/.menu/FIND-DCIP
-. $omega/.menu/ZONE-TRANSFER
-. $omega/.menu/LGA-SMB-SHARE
-. $omega/.menu/FIND-USER-LIST
-. $omega/.menu/POISONING
-. $omega/.menu/COERCE
-. $omega/.menu/LDAP-ENUM
+. ./.menu/MAIN
+. ./.menu/NETSCAN
+. ./.menu/FIND-DCIP
+. /.menu/ZONE-TRANSFER
+. /.menu/LGA-SMB-SHARE
+. /.menu/FIND-USER-LIST
+. /.menu/POISONING
+. /.menu/COERCE
+. ./.menu/LDAP-ENUM
 
 # Info
 
-. $omega/.info/CREDITS
-. $omega/.info/LEGEND
-. $omega/.info/MAN
+. ./.info/CREDITS
+. ./.info/LEGEND
+. ./.info/MAN
 
 # Core
-. $omega/.core/CONTROL
-. $omega/.core/SIGNAL
-. $omega/.core/DEPENDENCIES
-. $omega/.core/TARGET
-. $omega/.core/PROJECTS
-. $omega/.core/ARGUMENTS
-. $omega/.core/UPDATER
+. ./.core/CONTROL
+. ./.core/SIGNAL
+. ./.core/DEPENDENCIES
+. ./.core/TARGET
+. ./.core/PROJECTS
+. ./.core/ARGUMENTS
+. ./.core/UPDATER
