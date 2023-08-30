@@ -1,6 +1,7 @@
 #!/bin/sh
 
-. $origin/.core/CONTROL
+#. $origin/.core/CONTROL
+#. ./.core/LINK
 
 tmp_folder=zzz_BifrostEphemeral.tmp
 
@@ -25,8 +26,6 @@ list_projects() {
     done
 
     if [ "$found_projects" = false ] || [ -d "$origin/projects/$tmp_folder" ]; then
-        :
-    else
         echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
     fi
 }

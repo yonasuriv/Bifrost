@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $origin/.core/CONTROL
+#. $origin/.core/CONTROL
 #. /home/kali/.xfiles/projects/bifrost/.core/CONTROL 
 
 print_version() {

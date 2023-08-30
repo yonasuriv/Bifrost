@@ -2,6 +2,7 @@
 
 bridge='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
+#origin="." # Used for debugging only
 origin=~/.local/share/Bifrost
 location=$(pwd)
 
