@@ -32,6 +32,8 @@ menu () {
     echo "  E) Exit"
     echo
     echo "  L) Show Legend"
+    echo
+    echo "  X) Update Bifrost"
     echo "  X) Install Dependencies"
     echo
     echo -n "     Choose one of the above options: "
@@ -52,6 +54,7 @@ menu_select  () {
     8) udev;;
     [Ee]) credits; exit;;
     [Ll]) legend;;
+    [Uu]) update;;
     [Xx]) dependencies; menu_return;;
     *) error_menu ; menu_return;;
     esac
