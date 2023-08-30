@@ -22,8 +22,8 @@ menu () {
     echo
     echo "  1) Network Scan"
     echo "  2) Find DC IP"
-    echo "  3)$dim Zone Transfer $end"
-    echo "  4)$dim List Guest Access on SMB Share $end"
+    echo "  3) Zone Transfer"
+    echo "  4) List Guest Access on SMB Share"
     echo "  5)$dim Enumerate LDAP $end"
     echo "  6)$dim Find User List $end"
     echo "  7)$dim Poisoning $end"
@@ -44,8 +44,8 @@ menu_select  () {
     case $selection in
     1) network_scan;;
     2) find_dc_ip;;
-    3) udev;;
-    4) udev;;
+    3) zone_transfer;;
+    4) list_guest_access_smb_share;;
     5) udev;;
     6) udev;;
     7) udev;;
