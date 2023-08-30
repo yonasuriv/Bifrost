@@ -10,7 +10,6 @@ update () {
     git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
     . $origin/.core/CONTROL
     echo "\033[1;32m Bifrost Link successfully updated to the last version. \033[0m"
-    exit 0
     }
 
 tmp_folder="zzz_BifrostEphemeral.tmp"
@@ -139,6 +138,7 @@ handle_arguments() {
                 update
                 echo
                 print_version
+                exit 0
                 ;;
             -P|-p)
                 shift  # Consume the -p flag
