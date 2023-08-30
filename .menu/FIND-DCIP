@@ -6,7 +6,8 @@ find_dc_ip() {
     echo "  1) $command Show domain name & DNS$dim nmcii dev show etc0$end"
     echo "  2) $command$dim nslookup -type=SRV _ldap.tcp.dc._msdcs. <domain>$end"
     echo
-    echo "  E) Exit$end"
+    echo "  R) Return to the Main Menu"
+    echo "  E) Exit"
     echo
     echo -n "     Choose one of the above options: "
     find_dc_ip_select
@@ -19,8 +20,9 @@ find_dc_ip_select() {
     case $selection in
         1) nmcii dev show etc0 ; echo "$end"; menu_return ;;
         2) nslookup -type=SRV _ldap.tcp.dc._msdcs. "$ip" ; echo "$end"; menu_return ;;
+        [Rr]) start ;; # Return to the main menu
         [Ee]) credits;;
         0) legend;;
-        *) incorrect_selection_number ; menu_return ;;
+        *) incorrect_selection_number ; menu_return ;; # Return to the main menu [Prompt]
     esac
     }

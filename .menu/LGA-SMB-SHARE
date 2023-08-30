@@ -3,13 +3,14 @@
 list_guest_access_smb_share() {
     echo "$negative List Guest Access on SMB Share $end"
     echo
-    echo "  1)$command$dim  enum4linux -a -u "" -p "" <dc-ip> && enum4linux -a -u "guest" -p "" <dc-ip>$end"
-    echo "  2)$command$dim  smbmap -u "" -p "" -P 445 -H <dc-ip> && smbmap -u "guest" -p "" -P 445 -H <dc-ip>$end"
-    echo "  3)$command$dim  smbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip>$end"
-    echo "  4)$command$crackmapexec Enumerate Null Session$dim cme smb <ip> -u '' -p '' $end"
-    echo "  5)$command$crackmapexec Enumerate Anonymous Access$dim cme smb <ip> -u 'a' -p '' $end"
+    echo "  1)$command$dim enum4linux -a -u "" -p "" <dc-ip> && enum4linux -a -u "guest" -p "" <dc-ip>$end"
+    echo "  2)$command$dim smbmap -u "" -p "" -P 445 -H <dc-ip> && smbmap -u "guest" -p "" -P 445 -H <dc-ip>$end"
+    echo "  3)$command$dim smbclient -U '%' -L //<dc-ip> && smbclient -U 'guest%' -L //<dc-ip>$end"
+    echo "  4)$command Enumerate Null Session$dim cme smb <ip> -u '' -p '' $crackmapexec $end"
+    echo "  5)$command Enumerate Anonymous Access$dim cme smb <ip> -u 'a' -p '' $crackmapexec $end"
     echo
-    echo "  E) Exit$end"
+    echo "  R) Return to the Main Menu"
+    echo "  E) Exit"
     echo
     echo -n "     Choose one of the above options: "
     list_guest_access_smb_share_select
@@ -25,8 +26,9 @@ list_guest_access_smb_share_select() {
         3) smbclient -U '%' -L //$dc_ip && smbclient -U "$guest%" -L //<dc-ip> @$name_Server ; echo "$end"; menu_return ;;
         4) cme smb $ip -u '' -p '' ; echo "$end"; menu_return ;;
         5) cme smb $ip -u 'a' -p '' ; echo "$end"; menu_return ;;
+        [Rr]) start ;; # Return to the main menu
         [Ee]) credits;;
         0) legend;;
-        *) incorrect_selection_number ; menu_return ;;
+        *) incorrect_selection_number ; menu_return ;; # Return to the main menu [Prompt]
     esac
     }

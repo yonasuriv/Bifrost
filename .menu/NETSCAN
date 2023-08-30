@@ -11,7 +11,8 @@ network_scan () {
     echo "  6) $command Full Scan$dim nmap -PN -sC -sV -p- -oA <output> <ip>$end"
     echo "  7) $command UDP Scan$dim nmap -sU -sC -sV -oA <output> <ip>$end"
     echo
-    echo "  E) Exit$end"
+    echo "  R) Return to the Main Menu"
+    echo "  E) Exit"
     echo
     echo -n "     Choose one of the above options: "
     network_scan_select
@@ -31,8 +32,9 @@ network_scan_select() {
         6) nmap -PN -sC -sV -p- -oA "$output_filename" "$ip" ; echo "$end"; menu_return ;;
         7) read -p "Enter the Nmap UDP Scan output filename: " output_filename
         nmap -sU -sC -sV -oA "$output_filename" "$ip" ; echo "$end"; menu_return ;;
+        [Rr]) start ;; # Return to the main menu
         [Ee]) credits;;
         0) legend;;
-        *) incorrect_selection_number ; menu_return ;;
+        *) incorrect_selection_number ; menu_return ;; # Return to the main menu [Prompt]
     esac
     }

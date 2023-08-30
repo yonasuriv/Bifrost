@@ -5,7 +5,8 @@ zone_transfer() {
     echo
     echo "  1) $command$dim dig axfr <domain_name> @<name_server>$end"
     echo
-    echo "  E) Exit$end"
+    echo "  R) Return to the Main Menu"
+    echo "  E) Exit"
     echo
     echo -n "     Choose one of the above options: "
     zone_transfer_select
@@ -17,8 +18,9 @@ zone_transfer_select() {
     echo "$dim"
     case $selection in
         1) dig axfr $domain @$name_Server ; echo "$end"; menu_return ;;
+        [Rr]) start ;; # Return to the main menu
         [Ee]) credits;;
         0) legend;;
-        *) incorrect_selection_number ; menu_return ;;
+        *) incorrect_selection_number ; menu_return ;; # Return to the main menu [Prompt]
     esac
     }
