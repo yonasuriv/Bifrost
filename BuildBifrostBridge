@@ -11,10 +11,10 @@ build () {
     echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
     echo
     sleep 2
-    cp Bifrost.c bifrost
+    cp Bifrost.c bifrost.sh
     chmod +x bifrost
     mkdir -p ~/.local/bin
-    mv bifrost ~/.local/bin
+    mv bifrost.sh ~/.local/bin
     rm -rf "$origin"
     #mkdir $origin > /dev/null 2>&1
     #transfer
