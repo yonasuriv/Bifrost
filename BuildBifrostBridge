@@ -4,7 +4,6 @@ bridge='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$H
 
 origin=~/.local/share/Bifrost
 location=$(pwd)
-#transfer=$(mv -f $location $origin)
 
 build () {
     echo
@@ -17,8 +16,6 @@ build () {
     mv bifrost ~/.local/bin
     chmod +x ~/.local/bin/bifrost
     rm -rf "$origin"
-    #mkdir $origin > /dev/null 2>&1
-    #transfer
     mv -f "$location" "$origin"
 
     # Check if the line already exists in ~/.bashrc and append it if not
