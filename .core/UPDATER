@@ -55,7 +55,7 @@ force_update() {
 
 update() {
     # Load the local version from the CONTROL file
-    local_version=$(grep -o 'version="[^"]*"' $origin/.core/CONTROL | sed 's/version="//;s/"//')
+    local_version=$(grep -o 'version="[^"]*"' $omega/.core/CONTROL | sed 's/version="//;s/"//')
 
     # Define the URL of the remote CONTROL file
     remote_url="https://raw.githubusercontent.com/yonasuriv/Bifrost/main/.core/CONTROL"
