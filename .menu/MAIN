@@ -24,10 +24,10 @@ menu () {
     echo "  2) Find DC IP"
     echo "  3) Zone Transfer"
     echo "  4) List Guest Access on SMB Share"
-    echo "  5) Enumerate LDAP (dev)" 
-    echo "  6) Find User List (dev)"
-    echo "  7) Poisoning (dev)"
-    echo "  8) Coerce (dev)"
+    echo "  5) Enumerate LDAP 🧪" 
+    echo "  6) Find User List 🧪"
+    echo "  7) Poisoning 🧪"
+    echo "  8) Coerce 🧪"
     echo
     echo "  E) Exit"
     echo
