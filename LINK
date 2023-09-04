@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #omega="."
+. ./.core/ASSEMBLER $bridge_build
 . ./.core/ASSEMBLER
 
 alpha=$(pwd) # Directory where the script is being run (Current)
