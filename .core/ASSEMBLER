@@ -1,17 +1,6 @@
 #!/bin/sh
 
-# origin=~/.local/bin/bifrost
-
-# omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
-#. $omega/.core/ASSEMBLER
-
-bridge_build() {
-    omega="." # Debug
-}
-
-bridge_set() {
-    omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
-}
+. ~/.local/share/bifrost/.core/TRACKER
 
 # Assets
 . $omega/.assets/CSS
@@ -40,3 +29,14 @@ bridge_set() {
 . $omega/.core/PROJECTS
 . $omega/.core/ARGUMENTS
 . $omega/.core/UPDATER
+
+start () {
+    #sudoreq
+    clear
+    logo
+    print_version
+    target_data
+    menu
+    menu_select
+}
+

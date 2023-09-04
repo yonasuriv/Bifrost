@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. ./ASSEMBLER
+
+handle_arguments "$@" # Pass all command-line arguments to the handle_arguments function
+start "$@" # Bifrost Link Start

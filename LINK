@@ -1,33 +1,30 @@
 #!/bin/sh
 
-#omega="."
-. ./.core/ASSEMBLER $bridge_build
-. ./.core/ASSEMBLER
+. ./.core/TRACKER
 
-alpha=$(pwd) # Directory where the script is being run (Current)
-exec_dir=~/.local/bin # Directory where the executable will be placed 
-omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
-
-export_path='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
 build () {
     echo
     echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
     echo
     sleep 2
-    cp -f ./.core/SIGNAL bifrost
-    chmod +x bifrost
-    mkdir -p $exec_dir
-    #rm -f $exec_dir/bifrost
-    rm -rf $exec_dir/bifrost
-    mv -f bifrost $exec_dir
+    chmod +x ./.core/SIGNAL/bifrost
+    mkdir -p $alpha
+    #rm -f $alpha/bifrost
+    rm -rf $alpha/bifrost
+    cp -f ./.core/SIGNAL/bifrost $alpha/bifrost
+    sed -i "3s#.*#. $omega/.core/ASSEMBLER#" $alpha/bifrost
+    
+    #ln -s ./.core/SIGNAL/bifrost $alpha/bifrost
+    
+    #mv -f bifrost $alpha
     #ln -s $alpha/.core/SIGNAL $omega/bifrost # Creates a Symbolic Link
     #ln -s ./.core/SIGNAL $omega/bifrost # Creates a Symbolic Link
-    #ln -s ./bifrost $exec_dir # Creates a Symbolic Link
-    #chmod +x $exec_dir/bifrost
-    rm -rf "$omega"
+    #ln -s ./bifrost $alpha # Creates a Symbolic Link
+    #chmod +x $alpha/bifrost
+    rm -rf $omega
     #mv -f "$alpha" "$omega"
-    cp -rf "$alpha" "$omega"
+    cp -rf $currentdir $omega
 
     # Check if the line already exists in ~/.bashrc and append it if not
     if ! grep -qF "$export_path" ~/.bashrc; then
