@@ -3,10 +3,10 @@
 legend() {
         echo "$negative Legends $end"
         echo
-        echo "  🔥$green Very common and efficient technique (quick win)"
-        echo "  ⚠️$red  Dangerous (could break stuff)$end"
-        echo "  🧪$yellow Under Development/Experimental"
-        echo "  ⚪$dim Command"
+        echo "  🔥$green Very common and efficient technique (quick win)$end"
+        echo "  🚫$red Dangerous (could break stuff)$end"
+        echo "  🧪$yellow Under Development/Experimental$end"
+        echo "  ⚪$dim Command$end"
         echo 
         echo "  $bloodhound " # Bloodhound
         echo "  $powerview " # PowerView
@@ -21,7 +21,7 @@ legend() {
 
 legend_banner () {
     hot="🔥"
-    dangerous="⚠️"
+    dangerous="🚫"
     command="⚪"
     bloodhound="🔴$greybgred BloodHound $end"
     powerview="🟡$greybgyellow PowerView $end"
