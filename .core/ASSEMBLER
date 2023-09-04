@@ -1,34 +1,92 @@
 #!/bin/sh
 
-# origin=~/.local/bin/bifrost
-# omega="." # Debug
-# omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
-#. $omega/.core/ASSEMBLER
+. ./.core/ASSEMBLER
 
-# Assets
-. $omega/.assets/CSS
-. $omega/.assets/LOGO
+alpha=$(pwd) # Directory where the script is being run (Current)
+exec_dir=~/.local/bin # Directory where the executable will be placed 
+omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
 
-# Menu
-. $omega/.menu/MAIN
-. $omega/.menu/FIND-DCIP
-. $omega/.menu/ZONE-TRANSFER
-. $omega/.menu/LGA-SMB-SHARE
-. $omega/.menu/FIND-USER-LIST
-. $omega/.menu/POISONING
-. $omega/.menu/COERCE
-. $omega/.menu/LDAP-ENUM
+export_path='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
 
-# Info
+build () {
+    echo
+    echo "\033[0;37m Building the Bifrost Bridge..\033[0m"
+    echo
+    sleep 2
+    cp -f ./.core/SIGNAL bifrost
+    chmod +x bifrost
+    mkdir -p $exec_dir
+    #rm -f $exec_dir/bifrost
+    rm -rf $exec_dir/bifrost
+    mv -f bifrost $exec_dir
+    #ln -s $alpha/.core/SIGNAL $omega/bifrost # Creates a Symbolic Link
+    #ln -s ./.core/SIGNAL $omega/bifrost # Creates a Symbolic Link
+    #ln -s ./bifrost $exec_dir # Creates a Symbolic Link
+    #chmod +x $exec_dir/bifrost
+    rm -rf "$omega"
+    #mv -f "$alpha" "$omega"
+    cp -rf "$alpha" "$omega"
 
-. $omega/.info/CREDITS
-. $omega/.info/LEGEND
-. $omega/.info/MAN
+    # Check if the line already exists in ~/.bashrc and append it if not
+    if ! grep -qF "$export_path" ~/.bashrc; then
+        echo "$export_path" >> ~/.bashrc
+    fi
 
-# Core
-. $omega/.core/CONTROL
-. $omega/.core/DEPENDENCIES
-. $omega/.core/TARGET
-. $omega/.core/PROJECTS
-. $omega/.core/ARGUMENTS
-. $omega/.core/UPDATER
+    # Check if the line already exists in ~/.zshrc and append it if not
+    if ! grep -qF "$export_path" ~/.zshrc; then
+        echo "$export_path" >> ~/.zshrc
+    fi
+    
+    echo "\033[1;32m Operation Completed Successfully.\033[0m"
+    echo
+    echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
+    exit 0
+}
+
+build2 () {
+    script_name="bifrost" # Script Name
+    script_alias="SIGNAL" # Script Name
+    package_folder="Bifrost" # Folder Containing all the files
+    builder_name="Bifrost Bridge" # Builder Name
+
+    alpha=$(pwd) # Directory where the script is being run (Current)
+    exec_dir=~/.local/bin # Directory where the executable will be placed 
+    omega=~/.local/share/Bifrost # Final Directory Destination of the Package Folder
+
+    echo
+    echo "\033[0;37m Building the $builder_name..\033[0m"
+    echo
+    sleep 2
+    cp ./.core/$script_alias $script_name
+    chmod +x $script_name
+    mkdir -p $exec_dir
+    mv -f $script_name $exec_dir
+    #ln -s $alpha/.core/$script_alias $omega/$script_name # Creates a Symbolic Link
+    #ln -s ./.core/$script_alias $omega/$script_name # Creates a Symbolic Link
+    #chmod +x $exec_dir/$script_name
+    rm -rf "$omega"
+    #mv -f "$alpha" "$omega"
+    cp -f "$alpha" "$omega"
+
+    # Check if the line already exists in ~/.bashrc and append it if not
+    if ! grep -qF "$export_path" ~/.bashrc; then
+        echo "$export_path" >> ~/.bashrc
+    fi
+
+    # Check if the line already exists in ~/.zshrc and append it if not
+    if ! grep -qF "$export_path" ~/.zshrc; then
+        echo "$export_path" >> ~/.zshrc
+    fi
+    
+    echo "\033[1;32m Operation Completed Successfully.\033[0m"
+    echo
+    echo " Now you can use the Bifrost Link simply by typing\033[1;36m $script_name\033[0m on your terminal."
+}
+
+# Build Bifrost Bridge
+build
+
+
+
+
+
