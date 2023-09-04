@@ -13,8 +13,8 @@ build () {
     rm -rf $alpha/bifrost
     cp -f ./.core/SIGNAL/bifrost $alpha/bifrost
     sed -i "3s#.*#. $omega/.core/ASSEMBLER#" $alpha/bifrost
-    cp -r projects/* projects_folder
-    rm -rf projects
+    cp -r ./projects/* $projects_folder
+    rm -rf ./projects
 
     rm -rf $omega
     cp -rf $currentdir $omega
