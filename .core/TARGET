@@ -51,7 +51,7 @@ target_domain() {
     fi
 
     echo
-    echo "$yellow2 Establishing the bridge with the target.."
+    echo "$yellow Establishing the bridge with the target.."
     echo
 
     # Rest of your code for pinging and establishing the link

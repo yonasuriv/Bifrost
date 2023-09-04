@@ -1,13 +1,13 @@
 #!/bin/sh
 
-projects_folder=~/.local/share/bifrost/projects
+projects_folder=$omega/projects
 tmp_folder=zzz_BifrostEphemeral.tmp
 
 tmp() {
     rm -r "$projects_folder/$tmp_folder" > /dev/null 2>&1
     mkdir -p "$projects_folder/$tmp_folder"
     cd "$projects_folder/$tmp_folder" #|| exit
-    cp ~/.local/share/bifrost/.assets/DUMMY $projects_folder/$tmp_folder/TARGET
+    cp $omega/.assets/DUMMY $projects_folder/$tmp_folder/TARGET
 }
 
 list_projects() {
@@ -69,7 +69,7 @@ projects_menu_select() {
         mkdir -p "$projects_folder/$project_name"
         cd "$projects_folder/$project_name" || exit
         echo "$end"
-        cp "/.assets/DUMMY" "$projects_folder/$project_name/TARGET"
+        cp "$omega/.assets/DUMMY" "$projects_folder/$project_name/TARGET"
         echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
         sleep 3
         target_prompt
@@ -124,7 +124,7 @@ project_create() {
     mkdir -p "$projects_folder/$project_name"
     cd "$projects_folder/$project_name" || exit
     echo "$green"
-    cp "/.assets/DUMMY" "$projects_folder/$project_name/TARGET"
+    cp "$omega/.assets/DUMMY" "$projects_folder/$project_name/TARGET"
     echo " $green2[PROJECT CREATED]$end Initializing $white$project_name$end."
     sleep 2
     target_prompt
