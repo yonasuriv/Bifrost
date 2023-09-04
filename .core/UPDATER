@@ -77,7 +77,10 @@ update() {
             sleep 2
             echo
             update_start
+            if [ "$local_version" = "$remote_version" ]; then
             echo "$green2 Bifrost Link successfully updated to the last version. $end"
+            else
+            echo "$red2 Critical Error: Bifrost Link couldn't be updated. Try again later or wait for the next update. $end"
         fi
         }
 
