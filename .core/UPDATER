@@ -44,10 +44,14 @@ update_start() {
 }
 
 force_update() {
+    echo " Forcing Update. "
+    sleep 1
+    echo
+    echo " Fixing Broken Packages.."
+    sleep 2
     update_start
-    echo "Forcing Update. Fixing Broken Packages.."
     echo 
-    echo "Done."
+    echo " Done."
 }
 
 update() {
