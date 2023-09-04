@@ -3,8 +3,9 @@
 legend() {
         echo "$negative Legends $end"
         echo
-        echo "  🔥$green2 Very common and efficient technique (quick win)"
-        echo "  ⚠️$red2  Dangerous (could break stuff)$end"
+        echo "  🔥$green Very common and efficient technique (quick win)"
+        echo "  ⚠️$red  Dangerous (could break stuff)$end"
+        echo "  🧪$yellow Under Development/Experimental"
         echo "  ⚪$dim Command"
         echo 
         echo "  $bloodhound " # Bloodhound
@@ -29,6 +30,7 @@ legend_banner () {
     certipy="🔵$greybgblue Certipy $end"
     metasploit="🦠$greybgwhite Metasploit $end"
     windows_tool="🪟$greybgcyan WindowsTool $end"
+    experimental="$yellow🧪"
 
     skip="  "
     }
