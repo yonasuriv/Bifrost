@@ -1,7 +1,7 @@
 #!/bin/sh
 
-projects_folder=$omega/projects
-tmp_folder=zzz_BifrostEphemeral.tmp
+#projects_folder=~/.local/share/bifrost_projects
+#tmp_folder=zzz_BifrostEphemeral.tmp
 
 tmp() {
     rm -r "$projects_folder/$tmp_folder" > /dev/null 2>&1

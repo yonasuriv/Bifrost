@@ -4,4 +4,7 @@ currentdir=$(pwd) # Directory where the script is being run (Current)
 alpha=~/.local/bin # Directory where the executable will be placed 
 omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
 
+projects_folder=~/.local/share/bifrost_projects
+tmp_folder=zzz_BifrostEphemeral.tmp
+
 export_path='export PATH="$PATH:$HOME/.local/bin:/bin:/usr/local/bin:/usr/bin:/bin:$HOME/.local/bin"'
