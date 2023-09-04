@@ -1,5 +1,6 @@
 #!/bin/sh
 
+omega="."
 . ./.core/ASSEMBLER
 
 alpha=$(pwd) # Directory where the script is being run (Current)
@@ -40,6 +41,7 @@ build () {
     echo "\033[1;32m Operation Completed Successfully.\033[0m"
     echo
     echo " Now you can use the Bifrost Link simply by typing\033[1;36m bifrost\033[0m on your terminal."
+    exit 0
 }
 
 build2 () {
@@ -84,6 +86,7 @@ build2 () {
 
 # Build Bifrost Bridge
 build
+
 
 
 
