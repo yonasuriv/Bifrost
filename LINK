@@ -1,6 +1,6 @@
 #!/bin/sh
 
-omega="."
+#omega="."
 . ./.core/ASSEMBLER
 
 alpha=$(pwd) # Directory where the script is being run (Current)
