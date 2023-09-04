@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+# origin=~/.local/bin/bifrost
 omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
 . $omega/.core/ASSEMBLER
 
