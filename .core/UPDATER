@@ -43,7 +43,9 @@ print_version() {
 }
 
 update_start() {
-    git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh BuildBifrostBridge > /dev/null 2>&1
+    rm $omega
+    git clone https://github.com/yonasuriv/bifrost.git $omega > /dev/null 2>&1 && cd bifrost && sh LINK && cd - > /dev/null 2>&1
+    #git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && cd bifrost && sh LINK > /dev/null 2>&1
     #. $origin/.core/CONTROL
 }
 
