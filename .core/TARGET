@@ -122,14 +122,14 @@ target_data() {
         #target_debug
 
         if [ "$project_folder" = "$tmp_folder" ]; then
-            echo " Project:  $yellow2$project_folder$end"
+            echo " Project:  $yellow$project_folder$end"
         else
-            echo " Project:  $cyan2$project_folder$end"
+            echo " Project:  $cyan$project_folder$end"
         fi
 
         # Check if target_domain exists and print it
         if [ -n "$target_domain" ]; then
-            echo " Domain:   $red2$target_domain$end"
+            echo " Domain:   $red$target_domain$end"
         fi
 
         # Check if target_username exists and print it
