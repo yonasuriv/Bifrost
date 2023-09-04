@@ -40,7 +40,7 @@ print_version() {
 
 update_start() {
     #rm -rf $omega
-    git clone --force https://github.com/yonasuriv/bifrost.git $omega > /dev/null 2>&1 && cd bifrost && sh LINK && cd - > /dev/null 2>&1
+    git clone https://github.com/yonasuriv/bifrost.git $omega > /dev/null 2>&1 && cd bifrost && sh LINK && cd - > /dev/null 2>&1
 }
 
 force_update() {
