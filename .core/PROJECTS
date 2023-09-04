@@ -23,10 +23,11 @@ list_projects() {
         fi
     done
 
-    if [ "$found_projects" = false ] || [ "$(ls -A "$projects_folder" | grep -v "$tmp_folder")" ]; then
+    if [ "$found_projects" = false ]; then
         echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
     fi
 }
+
 
 
 # Function to display the project menu
