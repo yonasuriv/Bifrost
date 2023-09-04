@@ -43,7 +43,7 @@ update_start() {
 }
 
 force_update() {
-    echo " Forcing Update. "
+    echo "$red2 Forcing Update. $end"
     sleep 1
     echo
     echo " Fixing Broken Packages.."

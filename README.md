@@ -15,10 +15,7 @@ Stable-Experimental: Bifrost Link is currently under Development.
 ## Installation
 
 ```bash
-git clone https://github.com/yonasuriv/bifrost.git > /dev/null 2>&1 && 
-cd bifrost
-sh LINK 
-cd - > /dev/null 2>&1
+git clone https://github.com/yonasuriv/bifrost.git ./.tmp/bifrost > /dev/null 2>&1 && cd .tmp/bifrost && sh LINK && cd ../.. && rm -rf .tmp && cd - > /dev/null 2>&1
 ```
 
 ## Run
