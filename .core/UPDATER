@@ -46,7 +46,7 @@ force_update() {
     echo "$red2 Forcing Update. $end"
     sleep 1
     echo
-    echo "$dim Fixing Broken Packages..$end"
+    echo "$white Fixing Broken Packages..$end"
     sleep 2
     update_start
     echo 
