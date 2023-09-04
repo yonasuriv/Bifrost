@@ -1,8 +1,5 @@
 #!/bin/sh
 
-#. $origin/.core/CONTROL
-#. ./.core/LINK
-
 projects_folder=~/.local/share/bifrost/projects
 tmp_folder=zzz_BifrostEphemeral.tmp
 
