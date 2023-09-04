@@ -21,12 +21,11 @@ list_projects() {
             project_index=$((project_index + 1))
             found_projects=true
         fi
-        if [ "$found_projects" = false ] || [ -d "$projects_folder/$tmp_folder" ]; then
-            echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
-        fi
     done
 
-    
+    if [ "$found_projects" = false ] || [ "$(find "$projects_folder" -mindepth 1 -maxdepth 1 -not -name "$tmp_folder" -print -quit)" ]; then
+        echo " $red [NO PROJECTS FOUND]$end$dim Once created, they will appear here.$end"
+    fi
 }
 
 
