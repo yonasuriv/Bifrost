@@ -45,6 +45,9 @@ update_start() {
 
 force_update() {
     update_start
+    echo "Forcing Update. Fixing Broken Packages.."
+    echo 
+    echo "Done."
 }
 
 update() {
