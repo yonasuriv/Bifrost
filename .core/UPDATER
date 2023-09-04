@@ -5,8 +5,8 @@
 #
 
 # origin=~/.local/bin/bifrost
-omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
-. $omega/.core/ASSEMBLER
+#omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
+#. $omega/.core/ASSEMBLER
 
 print_version() {
     # Load the local version from the CONTROL file
