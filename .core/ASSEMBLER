@@ -1,6 +1,9 @@
 #!/bin/sh
 
+# origin=~/.local/bin/bifrost
 # $omega="." # Debug
+omega=~/.local/share/bifrost # Final Directory Destination of the Package Folder
+. $omega/.core/ASSEMBLER
 
 # Assets
 . $omega/.assets/CSS
